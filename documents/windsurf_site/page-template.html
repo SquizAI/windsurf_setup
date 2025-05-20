@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaCode // VibeCode 101 - PAGE_TITLE</title>
+    <meta name="description" content="Initial setup guide for Netlify, GitHub, Windsurf, and getting started with AI-powered development">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://metacode.ninja/VC_logo.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/modern-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navigation-container"></div>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="section">
+                <h2>PAGE_TITLE</h2>
+                
+                <!-- PAGE_CONTENT goes here -->
+                
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div id="footer-container"></div>
+    </footer>
+    
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Theme toggle -->
+    <button class="dark-mode-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">
+        <i class="fas fa-moon dark-icon"></i>
+        <i class="fas fa-sun light-icon"></i>
+    </button>
+    
+    <!-- Load components and scripts -->
+    <script>
+        // Load navigation component
+        fetch('components/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation-container').innerHTML = data;
+            });
+        
+        // Load footer component
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+            
+        // Theme toggle functionality
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        
+        function setThemePreference(theme) {
+            localStorage.setItem('theme', theme);
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+            }
+            updateToggleIcon();
+        }
+        
+        function updateToggleIcon() {
+            if (document.body.classList.contains('dark-mode')) {
+                themeToggleBtn.classList.add('dark-active');
+            } else {
+                themeToggleBtn.classList.remove('dark-active');
+            }
+        }
+        
+        function getPreferredTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                return savedTheme;
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        
+        // Set initial theme
+        document.addEventListener('DOMContentLoaded', () => {
+            setThemePreference(getPreferredTheme());
+            
+            // Handle toggle click
+            themeToggleBtn.addEventListener('click', () => {
+                if (document.body.classList.contains('dark-mode')) {
+                    setThemePreference('light');
+                } else {
+                    setThemePreference('dark');
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const mainNav = document.getElementById('main-nav');
+                    mainNav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

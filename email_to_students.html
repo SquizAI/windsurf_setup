@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaCode // VibeCode 101 - Class 1 Assignment</title>
+    <style>
+        :root {
+            /* Colors */
+            --primary-color: #7209b7;
+            --primary-light: #9d4edd;
+            --secondary-color: #f72585;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-gray: #eaeef2;
+            --text-dark: #212529;
+            --text-body: #495057;
+            --text-light: #6c757d;
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-xxl: 3rem;
+            
+            /* Border radius */
+            --border-radius-sm: 0.25rem;
+            --border-radius-md: 0.5rem;
+            --border-radius-lg: 1rem;
+            
+            /* Shadows */
+            --box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            --box-shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-body);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg-light);
+        }
+        
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--space-lg);
+            text-align: center;
+            border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background-color: var(--bg-white);
+            border-radius: 50% 50% 0 0;
+        }
+        
+        .logo {
+            max-width: 120px;
+            margin-bottom: var(--space-md);
+        }
+        
+        .content {
+            padding: var(--space-xl);
+            background-color: var(--bg-white);
+            border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+            box-shadow: var(--box-shadow-md);
+        }
+        
+        h1 {
+            font-size: 1.75rem;
+            margin: 0;
+            font-weight: 800;
+            color: white;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+            color: var(--primary-color);
+            font-weight: 700;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.2rem;
+            bottom: 0.2rem;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        p {
+            margin-bottom: var(--space-md);
+            color: var(--text-body);
+        }
+        
+        ul, ol {
+            margin-bottom: var(--space-lg);
+        }
+        
+        li {
+            margin-bottom: var(--space-sm);
+        }
+        
+        .task-list {
+            margin: var(--space-lg) 0;
+        }
+        
+        .task-item {
+            background: var(--bg-light);
+            padding: var(--space-lg);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--space-md);
+            box-shadow: var(--box-shadow-sm);
+            display: flex;
+            align-items: center;
+        }
+        
+        .task-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--space-md);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .task-content h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--space-sm) var(--space-lg);
+            text-decoration: none;
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
+            margin-top: var(--space-md);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow-md);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, rgba(242, 236, 254, 1) 0%, rgba(252, 231, 243, 1) 100%);
+            padding: var(--space-lg);
+            border-radius: var(--border-radius-md);
+            margin: var(--space-lg) 0;
+            box-shadow: var(--box-shadow-sm);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .footer {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--bg-gray);
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .footer-name {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .task-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .task-number {
+                margin-bottom: var(--space-sm);
+            }
+            
+            .content {
+                padding: var(--space-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MetaCode <span style="color: #f72585;">// VibeCode 101</span> - Class 1 Assignment</h1>
+    </div>
+    
+    <div class="content">
+        <p>Dear VibeCode 101 Students,</p>
+        
+        <p>Welcome to our first class assignment! I'm excited to guide you through the essential setup process for our AI-powered development journey. Tonight's assignment focuses on establishing your development environment by setting up three critical tools: Windsurf AI, GitHub, and Netlify.</p>
+        
+        <!-- Video Embed -->
+        <div style="margin: 2rem 0; position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <iframe src="https://www.loom.com/embed/0eb8c29960384206b2beb3bde37eb78b?sid=44fb6337-b3b0-4334-b54d-5f90e8aa31c8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="https://www.loom.com/share/0eb8c29960384206b2beb3bde37eb78b?sid=5d817b6d-7950-420a-be28-c23ec4c0aabf" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; font-size: 1.1rem; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 8px; margin: 1rem auto;">
+                <i style="margin-right: 8px;">↗</i> Open in Loom with Transcription
+            </a>
+        </div>
+        
+        <h2>Tonight's Assignment</h2>
+        
+        <p>To prepare for our upcoming collaborative development sessions, please complete the following tasks. Each step builds on the previous one, creating a seamless workflow for AI-powered development:</p>
+        
+        <div class="task-list">
+            <div class="task-item">
+                <div class="task-number">1</div>
+                <div class="task-content">
+                    <h3>Sign up for <a href="https://windsurf.ai" target="_blank">Windsurf AI</a></h3>
+                    <p>Create your account for the AI-powered development environment. Windsurf AI will serve as our primary coding tool with its integrated AI assistant.</p>
+                </div>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-number">2</div>
+                <div class="task-content">
+                    <h3>Sign up for <a href="https://github.com" target="_blank">GitHub</a></h3>
+                    <p>Set up your version control and code collaboration account. GitHub will host our code repositories and facilitate team collaboration.</p>
+                </div>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-number">3</div>
+                <div class="task-content">
+                    <h3>Sign up for <a href="https://netlify.com" target="_blank">Netlify</a></h3>
+                    <p>Create your account for continuous deployment and hosting. Netlify will automatically deploy our web applications from GitHub repositories.</p>
+                </div>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-number">4</div>
+                <div class="task-content">
+                    <h3>Follow the <a href="https://metacode.ninja/workflow.html" target="_blank">Complete Workflow Guide</a></h3>
+                    <p>Review our step-by-step process for AI-powered development. This guide connects all three tools into a seamless development workflow.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="highlight">
+            <h2>Why This Workflow Matters</h2>
+            <p>This integrated workflow combines the power of AI-assisted coding with professional development practices. By connecting Windsurf AI, GitHub, and Netlify, you'll experience how modern developers create, collaborate on, and deploy applications efficiently. This approach mirrors industry best practices while leveraging cutting-edge AI capabilities.</p>
+        </div>
+        
+        <h2>Helpful Resources</h2>
+        
+        <ul>
+            <li><strong>Workflow Guide:</strong> Our <a href="https://metacode.ninja/workflow.html">complete workflow guide</a> provides detailed instructions for each step</li>
+            <li><strong>Video Tutorials:</strong> Watch the <a href="https://www.youtube.com/watch?v=x1VCmB__TDo">Windsurf Tutorial: Getting Started</a> for visual guidance</li>
+            <li><strong>Documentation:</strong> Reference the official docs for <a href="https://docs.github.com/en/get-started">GitHub</a> and <a href="https://docs.netlify.com/">Netlify</a></li>
+        </ul>
+        
+        <p>If you encounter any issues during setup, please reach out directly or post in our class forum. I'm here to help ensure everyone has a functioning development environment for our upcoming sessions.</p>
+        
+        <p>Looking forward to seeing your progress in our next class!</p>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="https://metacode.ninja/workflow.html" target="_blank" class="btn">View Complete Workflow Guide</a>
+            <a href="https://metacode.ninja/class1-lesson.html" target="_blank" class="btn btn-secondary" style="margin-left: 1rem;">Access Class 1 Lesson</a>
+        </div>
+        
+        <div class="footer">
+            <p>Best regards,</p>
+            <p class="footer-name">Matty Squarzoni</p>
+            <p>VibeCode 101 Instructor<br>
+            mattystjh@gmail.com</p>
+        </div>
+    </div>
+</body>
+</html>

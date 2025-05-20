@@ -1,43 +1,107 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Load all components
-    loadComponent('header', 'components/header.html');
-    loadComponent('navigation', 'components/navigation.html');
-    loadComponent('introduction', 'components/introduction.html');
-    loadComponent('system-requirements', 'components/system-requirements.html');
-    loadComponent('installation-process', 'components/installation-process.html');
-    loadComponent('initial-setup', 'components/initial-setup.html');
-    loadComponent('getting-started-cascade', 'components/getting-started-cascade.html');
-    loadComponent('understanding-mcp', 'components/understanding-mcp.html');
-    loadComponent('multiple-projects', 'components/multiple-projects.html');
-    loadComponent('troubleshooting', 'components/troubleshooting.html');
-    loadComponent('lesson-plan', 'components/lesson-plan.html');
-    loadComponent('additional-resources', 'components/additional-resources.html');
-    loadComponent('footer', 'components/footer.html');
+    // Load all components with loading indicators
+    const components = [
+        { id: 'header', url: 'components/header.html' },
+        { id: 'navigation', url: 'components/navigation.html' },
+        { id: 'introduction', url: 'components/introduction.html' },
+        { id: 'system-requirements', url: 'components/system-requirements.html' },
+        { id: 'installation-process', url: 'components/installation-process.html' },
+        { id: 'initial-setup', url: 'components/initial-setup.html' },
+        { id: 'getting-started-cascade', url: 'components/getting-started-cascade.html' },
+        { id: 'understanding-mcp', url: 'components/understanding-mcp.html' },
+        { id: 'multiple-projects', url: 'components/multiple-projects.html' },
+        { id: 'github-guide', url: 'components/github-guide.html' },
+        { id: 'netlify-guide', url: 'components/netlify-guide.html' },
+        { id: 'workflow-guide', url: 'components/workflow-guide.html' },
+        { id: 'windsurf-lesson', url: 'components/windsurf-lesson.html' },
+        { id: 'troubleshooting', url: 'components/troubleshooting.html' },
+        { id: 'lesson-plan', url: 'components/lesson-plan.html' },
+        { id: 'additional-resources', url: 'components/additional-resources.html' },
+        { id: 'footer', url: 'components/footer.html' }
+    ];
     
-    // Setup navigation highlighting
-    setupNavigation();
+    // Add loading indicators
+    components.forEach(component => {
+        const el = document.getElementById(component.id);
+        if (el) {
+            el.innerHTML = `<div class="loading-indicator">
+                <div class="spinner"></div>
+                <p>Loading ${component.id.replace(/-/g, ' ')}...</p>
+            </div>`;
+        }
+    });
     
-    // Initialize back to top button
-    initBackToTop();
+    // Load components with a slight delay between each for better performance
+    let delay = 0;
+    const delayIncrement = 100; // milliseconds between component loads
     
-    // Initialize dark mode toggle
-    initDarkModeToggle();
+    components.forEach(component => {
+        setTimeout(() => {
+            loadComponent(component.id, component.url);
+        }, delay);
+        delay += delayIncrement;
+    });
+    
+    // Initialize interactive elements after all components are loaded
+    setTimeout(() => {
+        setupTabInteractions();
+        setupAccordions();
+        setupInteractiveCards();
+        enhanceCodeBlocks();
+    }, delay + 500); // Additional delay to ensure components are loaded
 });
 
 // Function to load component content
 function loadComponent(id, url) {
     fetch(url)
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+        })
         .then(html => {
-            document.getElementById(id).innerHTML = html;
-            // If this is the navigation component, set up after loading
-            if (id === 'navigation') {
-                setupNavigation();
+            const element = document.getElementById(id);
+            if (element) {
+                element.innerHTML = html;
+                
+                // Run specific initialization based on component type
+                if (id === 'navigation') {
+                    setupNavigation();
+                } else if (id === 'installation-process') {
+                    setupTabs();
+                } else if (id === 'troubleshooting') {
+                    setupAccordions();
+                }
+                
+                // Check if this component has lazy-load images
+                element.querySelectorAll('img[data-src]').forEach(img => {
+                    // Set up intersection observer for lazy loading
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                img.src = img.dataset.src;
+                                observer.unobserve(img);
+                            }
+                        });
+                    });
+                    observer.observe(img);
+                });
+                
+                // Add animation class after content is loaded
+                element.classList.add('content-loaded');
             }
         })
         .catch(error => {
             console.error(`Error loading component ${id}:`, error);
-            document.getElementById(id).innerHTML = `<div class="error">Failed to load ${id} component</div>`;
+            const element = document.getElementById(id);
+            if (element) {
+                element.innerHTML = `<div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Failed to load ${id.replace(/-/g, ' ')} component</h3>
+                    <p>Please refresh the page and try again.</p>
+                </div>`;
+            }
         });
 }
 
@@ -48,6 +112,7 @@ function setupNavigation() {
     
     const navLinks = nav.querySelectorAll('a');
     
+    // Handle click events on navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             // Remove active class from all links
@@ -63,23 +128,32 @@ function setupNavigation() {
                 const targetSection = document.getElementById(targetId);
                 
                 if (targetSection) {
+                    // Get the height of the navigation bar to offset the scroll position
+                    const navHeight = nav.offsetHeight;
+                    
                     window.scrollTo({
-                        top: targetSection.offsetTop - 70, // Adjust for navbar height
+                        top: targetSection.offsetTop - navHeight - 20, // Additional 20px padding
                         behavior: 'smooth'
                     });
+                    
+                    // Update URL hash without scrolling
+                    history.pushState(null, null, `#${targetId}`);
                 }
             }
         });
     });
     
     // Set active link based on current scroll position
-    window.addEventListener('scroll', function() {
+    function updateActiveNavLink() {
         let currentSection = '';
         const sections = document.querySelectorAll('section.section');
+        const navHeight = nav.offsetHeight;
         
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.pageYOffset >= sectionTop - 100) {
+            const sectionTop = section.offsetTop - navHeight - 100;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            
+            if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
                 currentSection = section.getAttribute('id');
             }
         });
@@ -91,62 +165,130 @@ function setupNavigation() {
                 link.classList.add('active');
             }
         });
-    });
+    }
+    
+    // Debounce function to limit how often the scroll event fires
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            const context = this;
+            const args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+    }
+    
+    // Set up scroll event listener with debounce
+    window.addEventListener('scroll', debounce(updateActiveNavLink, 50));
+    
+    // Run once on load to set initial active state
+    updateActiveNavLink();
 }
 
-// Function to initialize back to top button
-function initBackToTop() {
-    const backToTopButton = document.createElement('a');
-    backToTopButton.href = '#';
-    backToTopButton.className = 'back-to-top';
-    backToTopButton.innerHTML = '↑';
-    document.body.appendChild(backToTopButton);
+// Function to set up tabs
+function setupTabs() {
+    const tabContainers = document.querySelectorAll('.tab-buttons');
     
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('visible');
-        } else {
-            backToTopButton.classList.remove('visible');
-        }
-    });
-    
-    backToTopButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    tabContainers.forEach(container => {
+        const buttons = container.querySelectorAll('.tab-button');
+        const tabContent = container.nextElementSibling;
+        
+        if (!tabContent) return;
+        
+        const panes = tabContent.querySelectorAll('.tab-pane');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and panes
+                buttons.forEach(btn => btn.classList.remove('active'));
+                panes.forEach(pane => pane.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding tab pane
+                const tabId = button.getAttribute('data-tab');
+                const pane = document.getElementById(tabId);
+                if (pane) pane.classList.add('active');
+            });
         });
     });
 }
 
-// Function to initialize dark mode toggle
-function initDarkModeToggle() {
-    // Create dark mode toggle button
-    const darkModeToggle = document.createElement('button');
-    darkModeToggle.innerHTML = '🌙';
-    darkModeToggle.className = 'dark-mode-toggle btn';
-    darkModeToggle.style.position = 'fixed';
-    darkModeToggle.style.top = '1rem';
-    darkModeToggle.style.right = '1rem';
-    darkModeToggle.style.zIndex = '1000';
-    document.body.appendChild(darkModeToggle);
+// Function to set up accordions
+function setupAccordions() {
+    const accordions = document.querySelectorAll('.issue-header');
     
-    // Check for saved preference
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        document.body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '☀️';
-    }
-    
-    // Toggle dark mode
-    darkModeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        
-        if (document.body.classList.contains('dark-mode')) {
-            localStorage.setItem('darkMode', 'enabled');
-            darkModeToggle.innerHTML = '☀️';
-        } else {
-            localStorage.setItem('darkMode', 'disabled');
-            darkModeToggle.innerHTML = '🌙';
-        }
+    accordions.forEach(header => {
+        header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.toggle-icon');
+            
+            // Toggle the content display
+            header.parentElement.classList.toggle('active');
+            
+            if (header.parentElement.classList.contains('active')) {
+                if (icon) icon.textContent = '-';
+            } else {
+                if (icon) icon.textContent = '+';
+            }
+        });
     });
+}
+
+// Function to enhance interactive features of cards
+function setupInteractiveCards() {
+    // Add hover effect to cards
+    const cards = document.querySelectorAll('.card, .feature-card, .resource-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.classList.add('card-hover');
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.classList.remove('card-hover');
+        });
+    });
+}
+
+// Function to enhance code blocks
+function enhanceCodeBlocks() {
+    const codeBlocks = document.querySelectorAll('.code-block');
+    
+    codeBlocks.forEach(block => {
+        // Add copy button
+        const copyButton = document.createElement('button');
+        copyButton.className = 'copy-code-button';
+        copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+        copyButton.title = 'Copy code';
+        block.appendChild(copyButton);
+        
+        copyButton.addEventListener('click', () => {
+            const code = block.textContent;
+            navigator.clipboard.writeText(code)
+                .then(() => {
+                    copyButton.innerHTML = '<i class="fas fa-check"></i>';
+                    setTimeout(() => {
+                        copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Could not copy text: ', err);
+                    copyButton.innerHTML = '<i class="fas fa-times"></i>';
+                    setTimeout(() => {
+                        copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+                    }, 2000);
+                });
+        });
+    });
+}
+
+// Setup tab interactions if not part of installation-process
+function setupTabInteractions() {
+    document.querySelectorAll('.tab-buttons:not([data-initialized])').
+        forEach(tabContainer => {
+            setupTabs(tabContainer);
+            tabContainer.setAttribute('data-initialized', 'true');
+        });
 }

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaCode // VibeCode 101 - Netlify Deployment</title>
+    <meta name="description" content="Learn how to deploy your projects to Netlify as part of the MetaCode VibeCode 101 course">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://metacode.ninja/VC_logo.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/modern-styles.css">
+    <link rel="stylesheet" href="css/image-sizing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navigation-container"></div>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="section">
+                <h2>Netlify Deployment</h2>
+                
+                <div class="intro-box">
+                    <div class="intro-content">
+                        <h3>Automated Deployment for Modern Web Projects</h3>
+                        <p>Netlify provides a seamless platform for deploying and hosting modern web applications with continuous deployment, serverless functions, and more. This guide will help you deploy your VibeCode 101 projects quickly and easily.</p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="images/Netlify_logo.png" alt="Netlify Logo" style="max-width: 200px;">
+                    </div>
+                </div>
+                
+                <div class="tab-container">
+                    <div class="tabs">
+                        <button class="tab-button active" data-tab="account-setup">Account Setup</button>
+                        <button class="tab-button" data-tab="deployment">Deploying Sites</button>
+                        <button class="tab-button" data-tab="custom-domain">Custom Domains</button>
+                        <button class="tab-button" data-tab="advanced">Advanced Features</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="account-setup">
+                            <h3>Setting Up Your Netlify Account</h3>
+                            
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Visit Netlify</div>
+                                    <p>Navigate to <a href="https://netlify.com" target="_blank">netlify.com</a> in your web browser and click the "Sign up" button in the top right corner.</p>
+                                    <div class="image-box">
+                                        <img src="images/netlify-homepage.png" alt="Netlify Homepage" class="screenshot" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">Sign Up for an Account</div>
+                                    
+                                    <div class="signup-details">
+                                        <h5>Available Sign-up Methods:</h5>
+                                        <ul>
+                                            <li><strong>GitHub</strong> - <span class="recommended-tag">Recommended</span> - Seamless integration with your GitHub repositories</li>
+                                            <li><strong>GitLab</strong> - Good option if you use GitLab for version control</li>
+                                            <li><strong>Bitbucket</strong> - For teams using Atlassian's Bitbucket</li>
+                                            <li><strong>Email</strong> - Basic signup with email and password</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="image-box">
+                                        <img src="images/netlify-signup-options.png" alt="Netlify Sign Up Options" class="screenshot" />
+                                    </div>
+                                    
+                                    <div class="tip-box">
+                                        <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                                        <div class="tip-content">
+                                            <strong>Pro Tip:</strong> We strongly recommend signing up with GitHub since this is what we'll use in this course. This allows for seamless continuous deployment directly from your GitHub repositories.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Authorize and Complete Setup</div>
+                                    
+                                    <h5>For GitHub Authentication:</h5>
+                                    <ol>
+                                        <li>Click "Authorize Netlify" when prompted</li>
+                                        <li>Choose whether to grant access to all repositories or select specific ones</li>
+                                        <li>For this course, we recommend granting access to all repositories for simplicity</li>
+                                        <li>Complete any additional account setup steps (team name, etc.)</li>
+                                    </ol>
+                                    
+                                    <h5>For Email Authentication:</h5>
+                                    <ol>
+                                        <li>Enter your full name and password</li>
+                                        <li>Check your email inbox for a verification link</li>
+                                        <li>Click the verification link to activate your account</li>
+                                        <li>Complete the team setup process</li>
+                                    </ol>
+                                    
+                                    <div class="image-box">
+                                        <img src="images/netlify-github-auth.png" alt="Netlify GitHub Authorization" class="screenshot" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tip-box">
+                                <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                                <div class="tip-content">
+                                    <strong>Pro Tip:</strong> The free tier of Netlify is very generous and likely sufficient for all your VibeCode 101 projects. It includes unlimited personal projects, HTTPS, continuous deployment, and more.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane" id="deployment">
+                            <h3>Deploying Your First Site</h3>
+                            
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Connect to Git Provider</div>
+                                    <p>Log in to Netlify and click "Add new site" > "Import an existing project" > "GitHub".</p>
+                                    <p>Authorize Netlify to access your GitHub repositories.</p>
+                                    <p>Choose the repository you want to deploy.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">Configure Build Settings</div>
+                                    <p>For basic static sites, you can leave the build command empty and just specify your publish directory (e.g., <code>.</code> for the root folder).</p>
+                                    <p>For sites built with frameworks:</p>
+                                    <ul>
+                                        <li><strong>For a site without a build process:</strong> Leave the build command empty and set the publish directory to your site folder</li>
+                                        <li><strong>For a site with a build process:</strong> Enter the build command (e.g., <code>npm run build</code>) and the output directory (e.g., <code>build</code> or <code>dist</code>)</li>
+                                    </ul>
+                                    <div class="image-box">
+                                        <img src="images/netlify-build-settings.png" alt="Netlify Build Settings Example" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Deploy Your Site</div>
+                                    <p>Click "Deploy site" and wait for the build and deployment process to complete.</p>
+                                    <p>Once deployed, Netlify will provide you with a unique URL (e.g., <code>your-project-name.netlify.app</code>).</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <div class="step-title">Continuous Deployment</div>
+                                    <p>Netlify will automatically redeploy your site whenever you push changes to the connected branch in your GitHub repository.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tip-box">
+                                <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                                <div class="tip-content">
+                                    <strong>Pro Tip:</strong> If your site requires environment variables (like API keys), you can set them in Netlify's dashboard under Site settings > Build & deploy > Environment variables.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane" id="custom-domain">
+                            <h3>Setting Up a Custom Domain</h3>
+                            
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Add a Custom Domain</div>
+                                    <p>In your Netlify site dashboard, go to "Domain settings" > "Add custom domain".</p>
+                                    <p>Enter your domain name and click "Verify".</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">DNS Configuration Options</div>
+                                    <p>Netlify offers two options for DNS configuration:</p>
+                                    <ul>
+                                        <li><strong>Option 1:</strong> Use Netlify DNS (recommended) - Transfer your domain's nameservers to Netlify</li>
+                                        <li><strong>Option 2:</strong> Use external DNS - Add CNAME or A records at your domain registrar</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Using Netlify DNS</div>
+                                    <p>If you choose Netlify DNS, click "Set up Netlify DNS" and follow the instructions to update your domain's nameservers at your registrar.</p>
+                                    <p>Netlify will automatically configure everything, including SSL.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <div class="step-title">Using External DNS</div>
+                                    <p>If you prefer to use your current DNS provider:</p>
+                                    <ol>
+                                        <li>Add a CNAME record for <code>www</code> pointing to your Netlify site URL</li>
+                                        <li>Add either an ALIAS, ANAME, or A record for the apex domain (e.g., <code>example.com</code>) pointing to Netlify's load balancer IPs</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <div class="step-title">SSL/HTTPS Setup</div>
+                                    <p>Netlify provides free SSL certificates through Let's Encrypt.</p>
+                                    <p>After your DNS is configured, Netlify will automatically provision an SSL certificate for your domain.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tip-box">
+                                <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                                <div class="tip-content">
+                                    <strong>Pro Tip:</strong> Using Netlify DNS simplifies the process and gives you access to additional features like branch subdomains. It's generally recommended unless you have specific needs for your current DNS provider.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane" id="advanced">
+                            <h3>Advanced Netlify Features</h3>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-server"></i> Netlify Functions</h4>
+                                <p>Build serverless functions to extend your static site with dynamic functionality. Functions are automatically deployed alongside your site.</p>
+                                <div class="code-block">
+                                    <code># Create a netlify.toml file in your project root</code>
+                                    <code>[functions]</code>
+                                    <code>  directory = "functions"</code>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-code-branch"></i> Branch Deploys & Preview URLs</h4>
+                                <p>Netlify can automatically deploy all branches of your repository, giving each a unique URL for previewing changes before merging.</p>
+                                <p>Enable this in Site settings > Build & deploy > Continuous Deployment > Deploy contexts.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-database"></i> Netlify Forms</h4>
+                                <p>Collect form submissions without any server-side code by adding the <code>netlify</code> attribute to your HTML forms.</p>
+                                <div class="code-block">
+                                    <code>&lt;form name="contact" method="POST" data-netlify="true"&gt;</code>
+                                    <code>  &lt;input type="text" name="name" /&gt;</code>
+                                    <code>  &lt;button type="submit"&gt;Send&lt;/button&gt;</code>
+                                    <code>&lt;/form&gt;</code>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-shield-alt"></i> Identity & Authentication</h4>
+                                <p>Add user authentication to your static site with Netlify Identity, supporting email/password, social logins, and more.</p>
+                                <p>Enable this in Site settings > Identity > Enable Identity.</p>
+                            </div>
+                            
+                            <div class="tip-box">
+                                <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                                <div class="tip-content">
+                                    <strong>Pro Tip:</strong> For more complex sites, create a <code>netlify.toml</code> file in your repository root to version control your build settings, redirects, headers, and more.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="next-steps">
+                    <h3>Next Steps</h3>
+                    <p>Now that you know how to deploy with Netlify, explore how to integrate this into your <a href="ai-workflow.html">AI-Dev Workflow</a> or learn about <a href="github.html">GitHub Integration</a>.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div id="footer-container"></div>
+    </footer>
+    
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Theme toggle -->
+    <button class="dark-mode-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">
+        <i class="fas fa-moon dark-icon"></i>
+        <i class="fas fa-sun light-icon"></i>
+    </button>
+    
+    <!-- Load components and scripts -->
+    <script>
+        // Load navigation component
+        fetch('components/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation-container').innerHTML = data;
+            });
+        
+        // Load footer component
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+            
+        // Theme toggle functionality
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        
+        function setThemePreference(theme) {
+            localStorage.setItem('theme', theme);
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+            }
+            updateToggleIcon();
+        }
+        
+        function updateToggleIcon() {
+            if (document.body.classList.contains('dark-mode')) {
+                themeToggleBtn.classList.add('dark-active');
+            } else {
+                themeToggleBtn.classList.remove('dark-active');
+            }
+        }
+        
+        function getPreferredTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                return savedTheme;
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        
+        // Set initial theme
+        document.addEventListener('DOMContentLoaded', () => {
+            setThemePreference(getPreferredTheme());
+            
+            // Handle toggle click
+            themeToggleBtn.addEventListener('click', () => {
+                if (document.body.classList.contains('dark-mode')) {
+                    setThemePreference('light');
+                } else {
+                    setThemePreference('dark');
+                }
+            });
+            
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and panes
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    
+                    // Add active class to current button and corresponding pane
+                    button.classList.add('active');
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const mainNav = document.getElementById('main-nav');
+                    mainNav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

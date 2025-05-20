@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaCode // VibeCode 101 - GitHub Integration</title>
+    <meta name="description" content="Learn how to integrate GitHub with your AI-powered development workflow in MetaCode VibeCode 101">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://metacode.ninja/VC_logo.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/modern-styles.css">
+    <link rel="stylesheet" href="css/image-sizing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navigation-container"></div>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="section">
+                <h2>GitHub Integration</h2>
+                
+                <!-- Embedded Lesson Video -->
+                <div class="video-container" style="margin-bottom: 2rem;">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                        <iframe src="https://www.loom.com/embed/0eb8c29960384206b2beb3bde37eb78b?sid=44fb6337-b3b0-4334-b54d-5f90e8aa31c8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                    </div>
+                </div>
+                
+                <div class="intro-box">
+                    <div class="intro-content">
+                        <h3>Version Control for AI-Powered Development</h3>
+                        <p>GitHub provides a robust platform for version control, collaboration, and code hosting which is essential for modern AI-powered development workflows. This guide will walk you through setting up GitHub and integrating it with your VibeCode 101 projects.</p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo" style="max-width: 200px;">
+                    </div>
+                </div>
+                
+                <div class="tab-container">
+                    <div class="tabs">
+                        <button class="tab-button active" data-tab="account-setup">Account Setup</button>
+                        <button class="tab-button" data-tab="repositories">Creating Repositories</button>
+                        <button class="tab-button" data-tab="workflow">Basic Workflow</button>
+                        <button class="tab-button" data-tab="integration">Windsurf Integration</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="account-setup">
+                            <h3>Setting Up Your GitHub Account</h3>
+                            
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Create a GitHub Account</div>
+                                    <p>Navigate to <a href="https://github.com" target="_blank">github.com</a> in your web browser.</p>
+                                    
+                                    <div class="signup-details">
+                                        <h5>Sign Up Process:</h5>
+                                        <ol>
+                                            <li><strong>Enter your email</strong> - Use a professional email you check regularly</li>
+                                            <li><strong>Create a password</strong> - Must include at least 8 characters with a number and lowercase letter</li>
+                                            <li><strong>Choose a username</strong> - This will be visible in your project URLs, so choose wisely</li>
+                                            <li><strong>Opt in/out of email preferences</strong></li>
+                                            <li><strong>Verify your account</strong> - Solve the security puzzle</li>
+                                            <li><strong>Click "Create account"</strong></li>
+                                        </ol>
+                                    </div>
+                                    
+                                    <div class="step-image">
+                                        <img src="images/github-signup.jpg" alt="GitHub Sign Up Page" class="screenshot">
+                                    </div>
+                                    
+                                    <div class="tip-box">
+                                        <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                                        <div class="tip-content">
+                                            <strong>Pro Tip:</strong> Choose a username that aligns with your professional identity. Many developers use their GitHub profiles for job applications, so a professional username is recommended.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">Verify Your Account</div>
+                                    <p>Solve the puzzle to verify you're human, then click "Create account".</p>
+                                    <p>Check your email for a verification link and click it to activate your account.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Set Up Two-Factor Authentication (Recommended)</div>
+                                    <p>For added security, go to Settings > Security > Two-factor authentication.</p>
+                                    <p>Follow the steps to set up 2FA using an authenticator app or SMS.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tip-box">
+                                <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                                <div class="tip-content">
+                                    <strong>Pro Tip:</strong> Choose a username that reflects your professional identity, as it will be visible in your project URLs and contributions across GitHub.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane" id="repositories">
+                            <h3>Creating and Managing Repositories</h3>
+                            
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Create a New Repository</div>
+                                    <p>Click the "+" icon in the top right corner and select "New repository".</p>
+                                    <p>Enter a repository name, description, and choose visibility (public or private).</p>
+                                    <p>Initialize with a README file to make cloning easier.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">Clone the Repository Locally</div>
+                                    <p>On your repository page, click the green "Code" button and copy the HTTPS URL.</p>
+                                    <p>Open your terminal and run:</p>
+                                    <div class="code-block">
+                                        <code>git clone https://github.com/yourusername/your-repo.git</code>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Add Collaborators (Optional)</div>
+                                    <p>Go to Settings > Collaborators and add team members by username or email.</p>
+                                    <p>Choose appropriate permission levels for each collaborator.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tip-box">
+                                <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                                <div class="tip-content">
+                                    <strong>Pro Tip:</strong> For VibeCode projects, create a clear README.md file that explains the purpose of your project, installation instructions, and how others can contribute.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane" id="workflow">
+                            <h3>Advanced GitHub Features</h3>
+                            <div class="features-grid">
+                                <div class="feature-card">
+                                    <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                                    <h4>GitHub Actions</h4>
+                                    <p>Automate your workflow with custom CI/CD pipelines directly in your repository.</p>
+                                </div>
+                                
+                                <div class="feature-card">
+                                    <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                                    <h4>GitHub Pages</h4>
+                                    <p>Host your web projects directly from your repository with automatic deployment.</p>
+                                </div>
+                                
+                                <div class="feature-card">
+                                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                                    <h4>Security Features</h4>
+                                    <p>Protect your code with dependency scanning, secret detection, and vulnerability alerts.</p>
+                                </div>
+                                
+                                <div class="feature-card">
+                                    <div class="feature-icon"><i class="fas fa-tasks"></i></div>
+                                    <h4>Project Management</h4>
+                                    <p>Organize your work with project boards, issue tracking, and milestone planning.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <div class="step-title">Merge the Pull Request</div>
+                                    <p>After review, click "Merge pull request" to add your changes to the main branch.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tip-box">
+                                <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                                <div class="tip-content">
+                                    <strong>Pro Tip:</strong> Write descriptive commit messages that explain <em>why</em> you made a change, not just what changed. This makes it easier for others (and your future self) to understand the purpose of each commit.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane" id="integration">
+                            <h3>Integrating GitHub with Windsurf</h3>
+                            
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Open Your Project in Windsurf</div>
+                                    <p>Launch Windsurf and open your project that's connected to a GitHub repository.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">Use Git Controls in Windsurf</div>
+                                    <p>Windsurf provides built-in Git controls for common operations:</p>
+                                    <ul>
+                                        <li>Click the branch icon to switch branches or create new ones</li>
+                                        <li>Use the source control tab to stage, commit, and push changes</li>
+                                        <li>Check file history and blame information directly in the editor</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Leverage AI for Git Operations</div>
+                                    <p>Ask Cascade to help with Git operations by typing commands like:</p>
+                                    <ul>
+                                        <li>"Create a commit message for my changes"</li>
+                                        <li>"Help me resolve this merge conflict"</li>
+                                        <li>"Create a .gitignore file for a React project"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <div class="step-title">Set Up GitHub Actions (Advanced)</div>
+                                    <p>Create automated workflows with GitHub Actions to test and deploy your code.</p>
+                                    <p>Windsurf can help you set up GitHub Actions configuration files.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tip-box">
+                                <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                                <div class="tip-content">
+                                    <strong>Pro Tip:</strong> Use the command palette in Windsurf (Cmd/Ctrl+Shift+P) and type "Git" to see all available Git commands without leaving the editor.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="next-steps">
+                    <h3>Next Steps</h3>
+                    <p>Now that you understand GitHub integration, learn how to deploy your projects with <a href="netlify.html">Netlify</a> or explore the complete <a href="ai-workflow.html">AI-Dev Workflow</a>.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div id="footer-container"></div>
+    </footer>
+    
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Theme toggle -->
+    <button class="dark-mode-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">
+        <i class="fas fa-moon dark-icon"></i>
+        <i class="fas fa-sun light-icon"></i>
+    </button>
+    
+    <!-- Load components and scripts -->
+    <script>
+        // Load navigation component
+        fetch('components/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation-container').innerHTML = data;
+            });
+        
+        // Load footer component
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+            
+        // Theme toggle functionality
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        
+        function setThemePreference(theme) {
+            localStorage.setItem('theme', theme);
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+            }
+            updateToggleIcon();
+        }
+        
+        function updateToggleIcon() {
+            if (document.body.classList.contains('dark-mode')) {
+                themeToggleBtn.classList.add('dark-active');
+            } else {
+                themeToggleBtn.classList.remove('dark-active');
+            }
+        }
+        
+        function getPreferredTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                return savedTheme;
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        
+        // Set initial theme
+        document.addEventListener('DOMContentLoaded', () => {
+            setThemePreference(getPreferredTheme());
+            
+            // Handle toggle click
+            themeToggleBtn.addEventListener('click', () => {
+                if (document.body.classList.contains('dark-mode')) {
+                    setThemePreference('light');
+                } else {
+                    setThemePreference('dark');
+                }
+            });
+            
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and panes
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    
+                    // Add active class to current button and corresponding pane
+                    button.classList.add('active');
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const mainNav = document.getElementById('main-nav');
+                    mainNav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaCode // VibeCode 101 - Resources</title>
+    <meta name="description" content="Helpful resources for Windsurf, GitHub, Netlify and AI-powered development">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://metacode.ninja/VC_logo.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/modern-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    
+    <style>
+        .resources-section {
+            margin-bottom: 3rem;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .resource-card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--bg-gray);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .dark-mode .resource-card {
+            background: var(--dark-bg-secondary);
+            border-color: var(--dark-border);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-md);
+        }
+        
+        .resource-card h4 {
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card p {
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+        
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--secondary-color);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            margin-top: auto;
+        }
+        
+        .resource-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .resource-link i {
+            margin-left: 0.25rem;
+            font-size: 0.85rem;
+        }
+        
+        .section-divider {
+            margin: 2.5rem 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, var(--bg-gray), transparent);
+        }
+        
+        .dark-mode .section-divider {
+            background: linear-gradient(90deg, var(--dark-border), transparent);
+        }
+        
+        .newsletter-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: var(--border-radius-lg);
+            padding: 2.5rem;
+            color: white;
+            margin-top: 3rem;
+        }
+        
+        .newsletter-content {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .newsletter-content h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-family: var(--font-main);
+            font-size: 1rem;
+        }
+        
+        .newsletter-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-md);
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: var(--secondary-dark);
+        }
+        
+        .last-updated {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navigation-container"></div>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="section">
+                <h2>Resources</h2>
+                
+                <div class="intro-box">
+                    <div class="intro-content">
+                        <h3>Helpful Resources for Your AI Development Journey</h3>
+                        <p>This curated collection of resources will help you get the most out of Windsurf, GitHub, Netlify, and other tools covered in the VibeCode 101 course. Bookmark this page for easy reference throughout your learning journey.</p>
+                    </div>
+                </div>
+                
+                <div class="resources-section">
+                    <h3>Windsurf Resources</h3>
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h4><i class="fas fa-book"></i> Official Documentation</h4>
+                            <p>Comprehensive guides and reference material from the Windsurf team.</p>
+                            <a href="https://docs.windsurf.com/" target="_blank" class="resource-link">docs.windsurf.com <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-video"></i> Windsurf Tutorial: Getting Started</h4>
+                            <p>Learn the basics of Windsurf AI in this comprehensive tutorial video.</p>
+                            <a href="https://www.youtube.com/watch?v=x1VCmB__TDo" target="_blank" class="resource-link">Watch Tutorial <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-video"></i> Advanced Windsurf Techniques</h4>
+                            <p>Dive deeper into Windsurf's powerful features with this advanced video guide.</p>
+                            <a href="https://www.youtube.com/watch?v=8TcWGk1DJVs" target="_blank" class="resource-link">Watch Advanced Guide <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fab fa-github"></i> Awesome Windsurf</h4>
+                            <p>A curated list of awesome resources for working with the Windsurf editor.</p>
+                            <a href="https://github.com/ichoosetoaccept/awesome-windsurf" target="_blank" class="resource-link">Awesome Windsurf <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-newspaper"></i> Changelog</h4>
+                            <p>Stay informed about the latest features and improvements.</p>
+                            <a href="https://windsurf.com/changelog" target="_blank" class="resource-link">Windsurf Changelog <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-keyboard"></i> Keyboard Shortcuts</h4>
+                            <p>Quick reference for all keyboard shortcuts to boost productivity.</p>
+                            <a href="https://docs.windsurf.com/windsurf/getting-started#keyboard-shortcuts" target="_blank" class="resource-link">Keyboard Shortcuts Guide <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="resources-section">
+                    <h3>GitHub Resources</h3>
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h4><i class="fas fa-book"></i> GitHub Documentation</h4>
+                            <p>Official documentation for all GitHub features and workflows.</p>
+                            <a href="https://docs.github.com/en" target="_blank" class="resource-link">GitHub Docs <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-graduation-cap"></i> GitHub Skills</h4>
+                            <p>Interactive courses to learn GitHub through practical exercises.</p>
+                            <a href="https://skills.github.com/" target="_blank" class="resource-link">GitHub Skills <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-code-branch"></i> Git Cheat Sheet</h4>
+                            <p>Quick reference for common Git commands and workflows.</p>
+                            <a href="https://training.github.com/downloads/github-git-cheat-sheet/" target="_blank" class="resource-link">Git Cheat Sheet <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-desktop"></i> GitHub Desktop</h4>
+                            <p>Simplified GUI for git commands without using the terminal.</p>
+                            <a href="https://desktop.github.com/" target="_blank" class="resource-link">GitHub Desktop <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="resources-section">
+                    <h3>Netlify Resources</h3>
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h4><i class="fas fa-book"></i> Netlify Documentation</h4>
+                            <p>Comprehensive guides for deploying and managing websites.</p>
+                            <a href="https://docs.netlify.com/" target="_blank" class="resource-link">Netlify Docs <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-rocket"></i> Deploy Guides</h4>
+                            <p>Framework-specific guides for deploying various types of projects.</p>
+                            <a href="https://docs.netlify.com/integrations/frameworks/" target="_blank" class="resource-link">Framework Guides <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-server"></i> Netlify Functions</h4>
+                            <p>Learn how to add serverless functionality to your static sites.</p>
+                            <a href="https://docs.netlify.com/functions/overview/" target="_blank" class="resource-link">Netlify Functions <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-clipboard-check"></i> Deploy Checklist</h4>
+                            <p>Best practices and checklist for successful deployments.</p>
+                            <a href="https://www.netlify.com/blog/2020/04/20/deploy-your-site-to-netlify-checklist/" target="_blank" class="resource-link">Deploy Checklist <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="resources-section">
+                    <h3>MetaCode // VibeCode 101 Resources</h3>
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h4><i class="fas fa-play"></i> Class 1 Video</h4>
+                            <p>The full recording of the first VibeCode 101 class session.</p>
+                            <a href="class1-lesson.html" class="resource-link">Watch Class 1 <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-code"></i> GitHub Integration</h4>
+                            <p>Detailed guide for setting up and using GitHub with Windsurf.</p>
+                            <a href="github.html" class="resource-link">GitHub Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-cloud-upload-alt"></i> Netlify Deployment</h4>
+                            <p>Step-by-step instructions for deploying your projects to Netlify.</p>
+                            <a href="netlify.html" class="resource-link">Netlify Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4><i class="fas fa-globe"></i> Official Website</h4>
+                            <p>Visit the official MetaCode website for additional resources.</p>
+                            <a href="https://metacode.ninja" target="_blank" class="resource-link">metacode.ninja <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="newsletter-box">
+                    <div class="newsletter-content">
+                        <h3>Stay Updated</h3>
+                        <p>Subscribe to receive updates, new tutorials, and announcements about VibeCode 101.</p>
+                        <form class="newsletter-form" action="#" method="POST">
+                            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <p class="last-updated">This guide was last updated on May 20, 2025. Windsurf is regularly updated with new features and improvements. Check the <a href="https://windsurf.com/changelog" target="_blank">official changelog</a> for the latest information.</p>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div id="footer-container"></div>
+    </footer>
+    
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Theme toggle -->
+    <button class="dark-mode-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">
+        <i class="fas fa-moon dark-icon"></i>
+        <i class="fas fa-sun light-icon"></i>
+    </button>
+    
+    <!-- Load components and scripts -->
+    <script>
+        // Load navigation component
+        fetch('components/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation-container').innerHTML = data;
+            });
+        
+        // Load footer component
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+            
+        // Theme toggle functionality
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        
+        function setThemePreference(theme) {
+            localStorage.setItem('theme', theme);
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+            }
+            updateToggleIcon();
+        }
+        
+        function updateToggleIcon() {
+            if (document.body.classList.contains('dark-mode')) {
+                themeToggleBtn.classList.add('dark-active');
+            } else {
+                themeToggleBtn.classList.remove('dark-active');
+            }
+        }
+        
+        function getPreferredTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                return savedTheme;
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        
+        // Set initial theme
+        document.addEventListener('DOMContentLoaded', () => {
+            setThemePreference(getPreferredTheme());
+            
+            // Handle toggle click
+            themeToggleBtn.addEventListener('click', () => {
+                if (document.body.classList.contains('dark-mode')) {
+                    setThemePreference('light');
+                } else {
+                    setThemePreference('dark');
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const mainNav = document.getElementById('main-nav');
+                    mainNav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

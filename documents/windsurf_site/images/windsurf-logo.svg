@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2963ff"/>
+      <stop offset="100%" stop-color="#5d83fa"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="55" fill="#fff" stroke="url(#logoGradient)" stroke-width="3"/>
+  <path d="M25,50 Q40,20 60,40 T95,50 Q80,80 60,60 T25,50" fill="url(#logoGradient)" stroke="white" stroke-width="2"/>
+  <text x="60" y="95" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2a2f45">WINDSURF</text>
+</svg>

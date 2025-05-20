@@ -1,0 +1,536 @@
+<div class="section-content">
+    <h2>Complete Workflow Guide</h2>
+    
+    <div class="intro-text">
+        <p>This guide explains the complete workflow for creating and deploying modern websites, from initial research to deployment. We'll cover how to use AI tools for research, create structured content, build interactive websites, and deploy them using GitHub and Netlify.</p>
+    </div>
+    
+    <div class="callout callout-info">
+        <div class="callout-icon"><i class="fas fa-info-circle"></i></div>
+        <div>
+            <div class="callout-title">Workflow Overview</div>
+            <p>The modern web development workflow leverages AI, version control, and automated deployment to streamline the process from idea to live website. This approach helps maintain quality, enables collaboration, and simplifies updates.</p>
+        </div>
+    </div>
+    
+    <div class="workflow-diagram">
+        <div class="workflow-step">
+            <div class="workflow-icon">
+                <i class="fas fa-brain"></i>
+            </div>
+            <div class="workflow-label">Research with AI</div>
+        </div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-step">
+            <div class="workflow-icon">
+                <i class="fab fa-markdown"></i>
+            </div>
+            <div class="workflow-label">Markdown Content</div>
+        </div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-step">
+            <div class="workflow-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="workflow-label">HTML/CSS/JS</div>
+        </div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-step">
+            <div class="workflow-icon">
+                <i class="fab fa-github"></i>
+            </div>
+            <div class="workflow-label">GitHub</div>
+        </div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-step">
+            <div class="workflow-icon">
+                <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <div class="workflow-label">Netlify</div>
+        </div>
+    </div>
+    
+    <div class="tabbed-content">
+        <div class="tab-buttons">
+            <button class="tab-button active" data-tab="research-tab">1. Research</button>
+            <button class="tab-button" data-tab="markdown-tab">2. Markdown</button>
+            <button class="tab-button" data-tab="website-tab">3. Website Creation</button>
+            <button class="tab-button" data-tab="github-tab">4. GitHub</button>
+            <button class="tab-button" data-tab="netlify-tab">5. Netlify</button>
+            <button class="tab-button" data-tab="maintenance-tab">6. Maintenance</button>
+        </div>
+        
+        <div class="tab-content">
+            <div id="research-tab" class="tab-pane active">
+                <h3>Step 1: Research with AI Tools (MCP)</h3>
+                
+                <div class="intro-text">
+                    <p>Modern research leverages AI tools to gather information quickly and efficiently. Windsurf's Model Context Protocol (MCP) provides powerful research capabilities to gather information from various sources.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-box-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="feature-box-content">
+                        <h3>What is MCP?</h3>
+                        <p>The Model Context Protocol (MCP) is a system in Windsurf that connects AI systems with external tools and data sources. It allows Cascade to access specialized functions, external information, and services like web search and data analysis.</p>
+                    </div>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Define Your Research Questions</div>
+                        <p>Start by clearly defining what information you need to gather. Break down broad topics into specific questions.</p>
+                        <p>For example: "What are the key features of Windsurf?" or "How do I set up GitHub Pages?"</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Research Using MCP</div>
+                        <p>Use Windsurf's Cascade with MCP integrations to gather information:</p>
+                        <ul>
+                            <li>Use the <code>firecrawl</code> MCP for web research and content extraction</li>
+                            <li>Use <code>context7</code> MCP for accessing library documentation</li>
+                            <li>Request specific information from reliable sources</li>
+                        </ul>
+                        <div class="code-block" data-language="text">
+# Example request to Cascade
+Research the steps required to deploy a static website on Netlify from a GitHub repository.
+Please provide information on continuous deployment and custom domains.
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Organize Research Findings</div>
+                        <p>As Cascade provides information:</p>
+                        <ul>
+                            <li>Identify key concepts and organize them into categories</li>
+                            <li>Note important steps, tools, and terminology</li>
+                            <li>Ask follow-up questions to clarify confusing points</li>
+                            <li>Request specific examples for complex procedures</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="callout callout-success">
+                    <div class="callout-icon"><i class="fas fa-check-circle"></i></div>
+                    <div>
+                        <div class="callout-title">Research Best Practices</div>
+                        <ul>
+                            <li>Ask specific questions rather than broad ones</li>
+                            <li>Request up-to-date information when timeliness matters</li>
+                            <li>Validate important technical information from multiple sources</li>
+                            <li>Ask for step-by-step instructions for processes you'll need to follow</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="markdown-tab" class="tab-pane">
+                <h3>Step 2: Create Structured Markdown Content</h3>
+                
+                <div class="intro-text">
+                    <p>Markdown provides an ideal format for structuring your content before converting it to a website. It's simple, readable, and can be easily converted to HTML.</p>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Create a Markdown File</div>
+                        <p>Create a file with the <code>.md</code> extension for your content. You can ask Cascade to generate this file based on your research.</p>
+                        <div class="code-block" data-language="text">
+# Example request to Cascade
+Based on our research, please create a well-structured markdown file
+that covers the complete guide for setting up GitHub and deploying to Netlify.
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Structure Your Content</div>
+                        <p>Organize your content with clear hierarchical structure:</p>
+                        <div class="code-block" data-language="markdown">
+# Main Title
+
+## Section 1
+Content for section 1...
+
+### Subsection 1.1
+More detailed content...
+
+## Section 2
+Content for section 2...
+
+- Bullet point 1
+- Bullet point 2
+
+1. Numbered step 1
+2. Numbered step 2
+
+> Important note or quote
+
+![Image description](path/to/image.jpg)
+
+[Link text](https://example.com)
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Preview Your Markdown</div>
+                        <p>Use a markdown previewer (like the one in VS Code or online tools) to ensure your content is formatted correctly.</p>
+                        <p>Check for proper heading levels, list formatting, and link functionality.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>Benefits of Starting with Markdown</h3>
+                    <ul>
+                        <li>Focuses on content structure without design distractions</li>
+                        <li>Easily readable and editable in any text editor</li>
+                        <li>Can be converted to HTML automatically</li>
+                        <li>Works well with version control systems like Git</li>
+                        <li>Supported by many static site generators and CMS platforms</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="website-tab" class="tab-pane">
+                <h3>Step 3: Convert to HTML, CSS, and JavaScript</h3>
+                
+                <div class="intro-text">
+                    <p>Once your content is structured in markdown, the next step is to convert it to a fully functional website with HTML, CSS, and JavaScript.</p>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Convert Markdown to HTML</div>
+                        <p>There are several approaches to convert your markdown to HTML:</p>
+                        <ul>
+                            <li><strong>Automatic conversion:</strong> Use tools like markdown-it, marked, or showdown</li>
+                            <li><strong>Static site generators:</strong> Jekyll, Hugo, or 11ty can convert markdown to a complete site</li>
+                            <li><strong>Manual conversion:</strong> Ask Cascade to convert your markdown to HTML with proper structure</li>
+                        </ul>
+                        <div class="code-block" data-language="javascript">
+// Example JavaScript to convert markdown to HTML
+const marked = require('marked');
+const fs = require('fs');
+
+// Read markdown file
+const markdown = fs.readFileSync('content.md', 'utf-8');
+
+// Convert to HTML
+const html = marked.parse(markdown);
+
+// Save HTML
+fs.writeFileSync('output.html', html);
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Create a Modern HTML Structure</div>
+                        <p>Organize your HTML with semantic elements and component-based structure:</p>
+                        <div class="code-block" data-language="html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <!-- Header content -->
+    </header>
+    
+    <nav class="navigation">
+        <!-- Navigation menu -->
+    </nav>
+    
+    <main class="container">
+        <section id="section1" class="section">
+            <!-- Section content -->
+        </section>
+        
+        <!-- More sections -->
+    </main>
+    
+    <footer class="footer">
+        <!-- Footer content -->
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Add CSS for Styling</div>
+                        <p>Create a CSS file to style your HTML with a modern, responsive design:</p>
+                        <ul>
+                            <li>Use CSS variables for consistent theming</li>
+                            <li>Create responsive layouts with Flexbox and Grid</li>
+                            <li>Implement a mobile-first approach</li>
+                            <li>Add transitions and animations for interactivity</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Enhance with JavaScript</div>
+                        <p>Add JavaScript to create interactive elements:</p>
+                        <ul>
+                            <li>Navigation highlighting</li>
+                            <li>Tab interfaces</li>
+                            <li>Smooth scrolling</li>
+                            <li>Dark mode toggle</li>
+                            <li>Content loading</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="callout callout-warning">
+                    <div class="callout-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div>
+                        <div class="callout-title">Website Best Practices</div>
+                        <ul>
+                            <li>Ensure your site is responsive and works on all device sizes</li>
+                            <li>Optimize images to reduce load times</li>
+                            <li>Test your site in multiple browsers</li>
+                            <li>Validate your HTML and CSS</li>
+                            <li>Follow accessibility guidelines (WCAG)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="github-tab" class="tab-pane">
+                <h3>Step 4: Push Your Website to GitHub</h3>
+                
+                <div class="intro-text">
+                    <p>Version control with GitHub helps track changes, collaborate with others, and simplifies deployment. This step covers how to upload your website to a GitHub repository.</p>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Initialize a Git Repository</div>
+                        <p>In your project directory, initialize a Git repository:</p>
+                        <div class="code-block" data-language="bash">
+# Navigate to your project folder
+cd your-website-folder
+
+# Initialize a new git repository
+git init
+
+# Create a .gitignore file for unwanted files
+echo "node_modules/" > .gitignore
+echo ".DS_Store" >> .gitignore
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Create a GitHub Repository</div>
+                        <p>Create a new repository on GitHub (see the GitHub Guide section for details).</p>
+                        <p>Copy the repository URL that GitHub provides.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Add Files and Commit</div>
+                        <p>Add your files to Git and make your first commit:</p>
+                        <div class="code-block" data-language="bash">
+# Add all files to staging
+git add .
+
+# Commit the files with a message
+git commit -m "Initial website commit"
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Connect to GitHub and Push</div>
+                        <p>Connect your local repository to GitHub and push your files:</p>
+                        <div class="code-block" data-language="bash">
+# Add GitHub as a remote
+git remote add origin https://github.com/yourusername/your-repo-name.git
+
+# Push your files to GitHub
+git push -u origin main
+                        </div>
+                        <p>If your main branch is called "master" instead of "main", use that name in the command.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>GitHub Workflow for Updates</h3>
+                    <p>After the initial setup, follow this workflow for updates:</p>
+                    <ol>
+                        <li>Make changes to your files</li>
+                        <li>Test changes locally</li>
+                        <li>Add changes to staging: <code>git add .</code></li>
+                        <li>Commit changes: <code>git commit -m "Description of changes"</code></li>
+                        <li>Push to GitHub: <code>git push</code></li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div id="netlify-tab" class="tab-pane">
+                <h3>Step 5: Deploy to Netlify</h3>
+                
+                <div class="intro-text">
+                    <p>Netlify provides fast, secure hosting with continuous deployment from GitHub. This step covers how to connect your GitHub repository to Netlify for automatic deployments.</p>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Connect Netlify to GitHub</div>
+                        <p>Log in to Netlify and click "Add new site" > "Import an existing project" > "GitHub".</p>
+                        <p>Authorize Netlify to access your GitHub repositories if prompted.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Select Your Repository</div>
+                        <p>Find and select the GitHub repository containing your website.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Configure Build Settings</div>
+                        <p>Configure your build settings based on your project:</p>
+                        <ul>
+                            <li><strong>For a simple static site:</strong> Leave the build command blank and specify the directory containing your HTML files (e.g., <code>./</code> or <code>./dist</code>)</li>
+                            <li><strong>For a site with a build process:</strong> Enter the build command (e.g., <code>npm run build</code>) and the output directory (e.g., <code>build</code> or <code>dist</code>)</li>
+                        </ul>
+                        <div class="image-box">
+                            <img src="https://images.ctfassets.net/zojzzdop0fzx/2tT8bLVytdfXXz4bYVBvW/32e6db1ce9d276b2b8c6fa22e44a5aaa/Netlify_UI.png" alt="Netlify Build Settings Example" />
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Deploy Your Site</div>
+                        <p>Click "Deploy site" and wait for the build process to complete.</p>
+                        <p>Netlify will provide a random subdomain (e.g., <code>random-name-123456.netlify.app</code>) where your site is accessible.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Configure a Custom Domain (Optional)</div>
+                        <p>To use a custom domain:</p>
+                        <ol>
+                            <li>Go to Site settings > Domain management</li>
+                            <li>Click "Add custom domain"</li>
+                            <li>Enter your domain name</li>
+                            <li>Follow Netlify's instructions to configure DNS settings</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="callout callout-success">
+                    <div class="callout-icon"><i class="fas fa-check-circle"></i></div>
+                    <div>
+                        <div class="callout-title">Continuous Deployment</div>
+                        <p>With this setup, any changes you push to your GitHub repository will trigger an automatic deployment on Netlify. This enables a smooth workflow:</p>
+                        <ol>
+                            <li>Update your content locally</li>
+                            <li>Commit and push to GitHub</li>
+                            <li>Netlify automatically deploys the changes</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="maintenance-tab" class="tab-pane">
+                <h3>Step 6: Ongoing Maintenance and Updates</h3>
+                
+                <div class="intro-text">
+                    <p>A successful website requires ongoing maintenance and updates. This final step covers best practices for keeping your website up-to-date and functioning properly.</p>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Monitor Your Site</div>
+                        <p>Regularly check your site for issues:</p>
+                        <ul>
+                            <li>Use Netlify's analytics to track visitor patterns</li>
+                            <li>Check for broken links and images</li>
+                            <li>Monitor site performance and load times</li>
+                            <li>Review deployment logs for any build errors</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Content Updates</div>
+                        <p>Keep your content fresh and relevant:</p>
+                        <ol>
+                            <li>Update your markdown files with new content</li>
+                            <li>Convert to HTML if necessary</li>
+                            <li>Commit and push changes to GitHub</li>
+                            <li>Let Netlify automatically deploy the updates</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Feature Enhancements</div>
+                        <p>Improve your site over time:</p>
+                        <ul>
+                            <li>Add new interactive elements</li>
+                            <li>Improve accessibility</li>
+                            <li>Enhance mobile responsiveness</li>
+                            <li>Optimize performance</li>
+                        </ul>
+                        <p>For significant changes, consider using git branches to develop and test before merging to your main branch.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-box-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="feature-box-content">
+                        <h3>The Iterative Process</h3>
+                        <p>Web development is an iterative process. As you learn more about your audience and their needs, you can refine your website accordingly. The workflow we've covered makes this iteration efficient:</p>
+                        <ol>
+                            <li>Research new topics or improvements with MCP</li>
+                            <li>Update your markdown content</li>
+                            <li>Enhance your website code</li>
+                            <li>Push changes to GitHub</li>
+                            <li>Netlify automatically deploys the updates</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="highlight-box">
+        <h3>Complete Workflow Benefits</h3>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <div class="card-title">Efficiency</div>
+                <p>This workflow streamlines the process from research to deployment, saving time and reducing errors.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-users"></i></div>
+                <div class="card-title">Collaboration</div>
+                <p>Git and GitHub make it easy for multiple people to work on the same project without conflicts.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-history"></i></div>
+                <div class="card-title">Version Control</div>
+                <p>Every change is tracked, making it easy to roll back to previous versions if needed.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                <div class="card-title">Continuous Deployment</div>
+                <p>Changes are automatically deployed, removing manual processes and reducing deployment errors.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="callout callout-info">
+        <div class="callout-icon"><i class="fas fa-info-circle"></i></div>
+        <div>
+            <div class="callout-title">Start Simple, Grow Gradually</div>
+            <p>Don't feel you need to implement every advanced feature at once. Start with a simple process that works for you, then gradually incorporate more sophisticated techniques as you become comfortable with each step of the workflow.</p>
+        </div>
+    </div>
+</div>

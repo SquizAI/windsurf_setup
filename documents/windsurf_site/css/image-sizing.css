@@ -1,0 +1,33 @@
+/* Screenshot and Image Sizing Controls */
+.screenshot {
+    max-width: 800px; /* Limit maximum width */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center images */
+    display: block; /* Ensure proper block display */
+}
+
+.intro-image .screenshot {
+    max-width: 500px; /* Smaller for intro sections */
+}
+
+.image-box {
+    max-width: 800px;
+    margin: 1.5rem auto;
+}
+
+.workflow-step-image img {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+}
+
+/* Ensure responsive images for mobile */
+@media (max-width: 768px) {
+    .screenshot,
+    .workflow-step-image img {
+        max-width: 100%;
+    }
+}

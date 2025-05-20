@@ -1,0 +1,297 @@
+<div class="section-content">
+    <h2>Netlify Guide</h2>
+    
+    <div class="intro-text">
+        <p>Netlify is a powerful platform for automating modern web projects, offering continuous deployment, serverless functions, and a global application delivery network. This guide will help you set up Netlify and deploy your first website.</p>
+    </div>
+    
+    <div class="callout callout-info">
+        <div class="callout-icon"><i class="fas fa-info-circle"></i></div>
+        <div>
+            <div class="callout-title">What is Netlify?</div>
+            <p>Netlify is a web hosting infrastructure and automation technology company that offers hosting and serverless backend services for web applications and static websites. It provides continuous deployment from Git across a global application delivery network, serverless form handling, and more.</p>
+        </div>
+    </div>
+    
+    <div class="tabbed-content">
+        <div class="tab-buttons">
+            <button class="tab-button active" data-tab="netlify-signup">Sign Up</button>
+            <button class="tab-button" data-tab="netlify-deploy">Deploy a Site</button>
+            <button class="tab-button" data-tab="netlify-features">Key Features</button>
+            <button class="tab-button" data-tab="netlify-domains">Custom Domains</button>
+        </div>
+        
+        <div class="tab-content">
+            <div id="netlify-signup" class="tab-pane active">
+                <h3>Creating a Netlify Account</h3>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Visit Netlify</div>
+                        <p>Navigate to <a href="https://netlify.com" target="_blank">netlify.com</a> in your web browser.</p>
+                        <div class="image-box">
+                            <img src="../images/Netlify_logo.png" alt="Netlify Logo" />
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Choose a Sign-Up Method</div>
+                        <p>Click the "Sign up" button and select from the available sign-up methods:</p>
+                        <ul>
+                            <li>GitHub (recommended if you'll be deploying from GitHub)</li>
+                            <li>GitLab</li>
+                            <li>Bitbucket</li>
+                            <li>Email</li>
+                        </ul>
+                        <p>Using a Git provider simplifies deployment by giving Netlify access to your repositories.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Authorize Netlify</div>
+                        <p>If you chose a Git provider, you'll be asked to authorize Netlify to access your account. This gives Netlify permission to read your repositories and set up webhooks.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Complete Your Profile</div>
+                        <p>Fill out any required profile information and agree to Netlify's terms of service.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>Netlify Plans</h3>
+                    <p>Netlify offers several pricing tiers:</p>
+                    <ul>
+                        <li><strong>Free:</strong> Perfect for personal projects and small websites</li>
+                        <li><strong>Pro:</strong> For professional websites with higher traffic needs</li>
+                        <li><strong>Business:</strong> For teams with multiple sites and advanced needs</li>
+                        <li><strong>Enterprise:</strong> For large organizations with custom requirements</li>
+                    </ul>
+                    <p>The free tier includes:</p>
+                    <ul>
+                        <li>Unlimited sites</li>
+                        <li>Continuous deployment</li>
+                        <li>HTTPS</li>
+                        <li>Global CDN</li>
+                        <li>100GB bandwidth per month</li>
+                        <li>Form handling (up to 100 submissions per month)</li>
+                        <li>Community support</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="netlify-deploy" class="tab-pane">
+                <h3>Deploying Your First Site</h3>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Go to the Netlify Dashboard</div>
+                        <p>After signing in, you'll be taken to your Netlify dashboard. Click the "Add new site" button and select "Import an existing project".</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Connect to Git Provider</div>
+                        <p>Select your Git provider (GitHub, GitLab, or Bitbucket) where your project is hosted.</p>
+                        <p>You'll see a list of your repositories. Select the one you want to deploy.</p>
+                        <div class="callout callout-warning">
+                            <div class="callout-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div>
+                                <div class="callout-title">Repository Requirements</div>
+                                <p>Ensure your repository contains the static website files (HTML, CSS, JS) or a static site generator project like React, Vue, Angular, etc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Configure Build Settings</div>
+                        <p>Netlify will automatically detect common project types and suggest build settings. You can review and adjust:</p>
+                        <ul>
+                            <li><strong>Branch to deploy:</strong> Usually main or master</li>
+                            <li><strong>Build command:</strong> The command to build your site (e.g., <code>npm run build</code>)</li>
+                            <li><strong>Publish directory:</strong> Where your built files are located (e.g., <code>dist</code>, <code>build</code>, or <code>public</code>)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Deploy the Site</div>
+                        <p>Click "Deploy site" to start the deployment process. Netlify will clone your repository, run your build command, and deploy the result.</p>
+                        <p>You can watch the deployment progress in real-time. When complete, Netlify will assign your site a random subdomain like <code>random-name-123456.netlify.app</code>.</p>
+                    </div>
+                </div>
+                
+                <div class="code-section">
+                    <h4>Sample netlify.toml Configuration</h4>
+                    <p>For more control, you can add a <code>netlify.toml</code> file to your repository:</p>
+                    
+                    <div class="code-block" data-language="toml">
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# Redirects and headers
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+                    </div>
+                </div>
+            </div>
+            
+            <div id="netlify-features" class="tab-pane">
+                <h3>Key Netlify Features</h3>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-sync-alt"></i></div>
+                        <div class="card-title">Continuous Deployment</div>
+                        <p>Netlify automatically builds and deploys your site when you push changes to your Git repository. Each commit triggers a new build.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-globe"></i></div>
+                        <div class="card-title">Global CDN</div>
+                        <p>Your site is distributed across a global content delivery network, ensuring fast loading times for visitors worldwide.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-lock"></i></div>
+                        <div class="card-title">HTTPS by Default</div>
+                        <p>Netlify provides free SSL certificates through Let's Encrypt, securing all sites with HTTPS automatically.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-code-branch"></i></div>
+                        <div class="card-title">Deploy Previews</div>
+                        <p>Each pull request gets its own preview deployment, making it easy to review changes before merging to your main branch.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-server"></i></div>
+                        <div class="card-title">Serverless Functions</div>
+                        <p>Write serverless functions that run on-demand without having to manage servers. Perfect for APIs, form handling, and more.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-paper-plane"></i></div>
+                        <div class="card-title">Form Handling</div>
+                        <p>Netlify can automatically handle form submissions from your site without requiring a backend server.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-box-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <div class="feature-box-content">
+                        <h3>Deploy Rollbacks</h3>
+                        <p>Netlify keeps a history of all your deployments. If something goes wrong with a new deploy, you can instantly roll back to a previous version with one click.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="netlify-domains" class="tab-pane">
+                <h3>Setting Up Custom Domains</h3>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Access Domain Settings</div>
+                        <p>From your site dashboard, go to Site settings > Domain management.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Add Your Custom Domain</div>
+                        <p>Click "Add domain" and enter your domain name (e.g., yourdomain.com).</p>
+                        <p>You have two options:</p>
+                        <ul>
+                            <li><strong>Purchase a domain through Netlify</strong> - Convenient but potentially more expensive</li>
+                            <li><strong>Use a domain you already own</strong> - Requires updating DNS settings</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Set Up DNS</div>
+                        <p>If using your own domain, you'll need to configure your DNS settings:</p>
+                        <ol>
+                            <li>Option 1: Use Netlify DNS (recommended)
+                                <ul>
+                                    <li>Netlify will guide you through updating your domain's nameservers at your registrar</li>
+                                    <li>This gives Netlify full control of DNS, simplifying setup</li>
+                                </ul>
+                            </li>
+                            <li>Option 2: Keep your current DNS provider
+                                <ul>
+                                    <li>Add CNAME records pointing to your Netlify site</li>
+                                    <li>Add A records for apex domains</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Wait for DNS Propagation</div>
+                        <p>DNS changes typically take 24-48 hours to fully propagate. Netlify will show the status of your domain setup.</p>
+                    </div>
+                </div>
+                
+                <div class="code-section">
+                    <h4>Example DNS Records</h4>
+                    <p>If using your existing DNS provider, add these records:</p>
+                    
+                    <div class="code-block" data-language="text">
+# For a subdomain like www.yourdomain.com
+Type: CNAME
+Name: www
+Value: your-site-name.netlify.app
+
+# For an apex domain like yourdomain.com
+Type: A
+Name: @
+Value: 75.2.60.5
+
+# Alternative apex record
+Type: ALIAS or ANAME (if your provider supports it)
+Name: @
+Value: your-site-name.netlify.app
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>HTTPS for Custom Domains</h3>
+                    <p>Netlify automatically provisions SSL certificates for your custom domains through Let's Encrypt. The process begins once your DNS is properly configured, and typically takes just a few minutes to complete.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="resources-list">
+        <h3>Netlify Resources</h3>
+        
+        <div class="resource-card">
+            <h3>Netlify Docs</h3>
+            <p>Official documentation covering all Netlify features and functionality.</p>
+            <a href="https://docs.netlify.com" target="_blank">Visit Resource <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        
+        <div class="resource-card">
+            <h3>Netlify Blog</h3>
+            <p>Practical guides, tutorials, and the latest news from Netlify.</p>
+            <a href="https://netlify.com/blog" target="_blank">Visit Resource <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        
+        <div class="resource-card">
+            <h3>Netlify CLI</h3>
+            <p>Command-line tool for developing and managing Netlify sites locally.</p>
+            <a href="https://docs.netlify.com/cli/get-started/" target="_blank">Visit Resource <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        
+        <div class="resource-card">
+            <h3>Netlify Support Forums</h3>
+            <p>Community discussions and help for Netlify users.</p>
+            <a href="https://answers.netlify.com" target="_blank">Visit Resource <i class="fas fa-external-link-alt"></i></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,220 @@
+<div class="section-content">
+    <h2>GitHub Guide</h2>
+    
+    <div class="intro-text">
+        <p>GitHub is a web-based platform that uses Git for version control, allowing developers to store, track, and collaborate on code projects. This guide will walk you through setting up a GitHub account and creating your first repository.</p>
+    </div>
+    
+    <div class="callout callout-info">
+        <div class="callout-icon"><i class="fas fa-info-circle"></i></div>
+        <div>
+            <div class="callout-title">What is GitHub?</div>
+            <p>GitHub is where over 100 million developers shape the future of software, including storing code, managing projects, and collaborating with teams. It provides powerful tools for version control, issue tracking, and continuous integration.</p>
+        </div>
+    </div>
+    
+    <div class="tabbed-content">
+        <div class="tab-buttons">
+            <button class="tab-button active" data-tab="github-signup">Sign Up</button>
+            <button class="tab-button" data-tab="github-repo">Create Repository</button>
+            <button class="tab-button" data-tab="github-basics">Basic Operations</button>
+            <button class="tab-button" data-tab="github-pages">GitHub Pages</button>
+        </div>
+        
+        <div class="tab-content">
+            <div id="github-signup" class="tab-pane active">
+                <h3>Creating a GitHub Account</h3>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Visit the GitHub Website</div>
+                        <p>Navigate to <a href="https://github.com" target="_blank">github.com</a> in your web browser.</p>
+                        <div class="image-box">
+                            <img src="https://github.githubassets.com/assets/GitHub-Logo-ee398b662d8b.png" alt="GitHub Logo" />
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Fill Out the Sign-Up Form</div>
+                        <p>On the homepage, you'll see a sign-up form. Enter your:</p>
+                        <ul>
+                            <li>Email address</li>
+                            <li>Choose a strong password</li>
+                            <li>Select a username (this will be your GitHub identity)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Verify Your Account</div>
+                        <p>Complete the verification process (may include solving a puzzle).</p>
+                        <p>Check your email to verify your email address by clicking the link GitHub sends you.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Personalize Your Experience</div>
+                        <p>GitHub will ask you some questions about your experience level and interests to help tailor your experience. You can also skip this step.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>Pro Tips for Your GitHub Account</h3>
+                    <ul>
+                        <li>Choose a professional username as it will be visible in your contributions</li>
+                        <li>Set up two-factor authentication for enhanced security</li>
+                        <li>Add a profile picture and bio to make your profile more personalized</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="github-repo" class="tab-pane">
+                <h3>Creating Your First Repository</h3>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Navigate to Repositories</div>
+                        <p>Once logged in, click the "+" icon in the upper right corner and select "New repository".</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Configure Your Repository</div>
+                        <p>Fill out the repository creation form:</p>
+                        <ul>
+                            <li><strong>Repository name:</strong> Choose a clear, descriptive name (e.g., "windsurf-guide")</li>
+                            <li><strong>Description:</strong> Add a short description of your project</li>
+                            <li><strong>Visibility:</strong> Choose Public or Private</li>
+                            <li><strong>Initialize:</strong> Select "Add a README file" to start with basic documentation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Create Repository</div>
+                        <p>Click "Create repository" to finish. You'll be taken to your new repository page.</p>
+                    </div>
+                </div>
+                
+                <div class="callout callout-warning">
+                    <div class="callout-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div>
+                        <div class="callout-title">Public vs. Private Repositories</div>
+                        <p>Public repositories are visible to anyone on the internet, while private repositories are only accessible to you and people you explicitly share them with. Free GitHub accounts have unlimited public repositories and limited private repositories.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="github-basics" class="tab-pane">
+                <h3>Basic GitHub Operations</h3>
+                
+                <div class="code-section">
+                    <h4>Common Git Commands</h4>
+                    <p>These commands will help you manage your repository from your local machine:</p>
+                    
+                    <div class="code-block" data-language="bash">
+# Clone a repository to your local machine
+git clone https://github.com/yourusername/your-repo.git
+
+# Check the status of your repository
+git status
+
+# Add files to staging area
+git add .                  # Add all files
+git add filename.ext       # Add specific file
+
+# Commit your changes
+git commit -m "Your commit message"
+
+# Push changes to GitHub
+git push origin main
+
+# Pull latest changes from GitHub
+git pull origin main
+
+# Create and switch to a new branch
+git checkout -b new-branch-name
+                    </div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-box-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <div class="feature-box-content">
+                        <h3>Understanding Branches</h3>
+                        <p>Branches allow you to develop features, fix bugs, or experiment with new ideas in a contained area of your repository, without affecting the main project. The default branch is usually called "main" (or "master" in older repositories).</p>
+                    </div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-box-icon">
+                        <i class="fas fa-code-merge"></i>
+                    </div>
+                    <div class="feature-box-content">
+                        <h3>Pull Requests</h3>
+                        <p>Pull requests let you tell others about changes you've pushed to a branch in a repository. Once a pull request is opened, you can discuss and review the potential changes with collaborators before your changes are merged into the main branch.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="github-pages" class="tab-pane">
+                <h3>Hosting with GitHub Pages</h3>
+                
+                <p>GitHub Pages is a free hosting service that lets you publish static websites directly from your GitHub repository.</p>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Enable GitHub Pages</div>
+                        <p>From your repository, go to Settings > Pages.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Choose a Source</div>
+                        <p>Select the branch you want to publish (usually "main").</p>
+                        <p>Select the folder (usually "/" or "/docs") that contains your website files.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Save and Access Your Site</div>
+                        <p>Click "Save". After a few minutes, your site will be published at <code>https://yourusername.github.io/repository-name/</code></p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>GitHub Pages Limitations</h3>
+                    <ul>
+                        <li>Only static content (HTML, CSS, JavaScript) is supported</li>
+                        <li>Repositories have a recommended limit of 1GB</li>
+                        <li>Published sites have a soft bandwidth limit of 100GB per month</li>
+                        <li>Site build process is limited to 10 builds per hour</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="resources-list">
+        <h3>GitHub Resources</h3>
+        
+        <div class="resource-card">
+            <h3>GitHub Docs</h3>
+            <p>Official documentation covering all GitHub features and functionality.</p>
+            <a href="https://docs.github.com" target="_blank">Visit Resource <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        
+        <div class="resource-card">
+            <h3>GitHub Skills</h3>
+            <p>Interactive courses to learn GitHub through practical exercises.</p>
+            <a href="https://skills.github.com" target="_blank">Visit Resource <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        
+        <div class="resource-card">
+            <h3>GitHub Desktop</h3>
+            <p>A GUI application that simplifies using Git and GitHub on your computer.</p>
+            <a href="https://desktop.github.com" target="_blank">Visit Resource <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        
+        <div class="resource-card">
+            <h3>GitHub CLI</h3>
+            <p>Official command-line tool for using GitHub features in your terminal.</p>
+            <a href="https://cli.github.com" target="_blank">Visit Resource <i class="fas fa-external-link-alt"></i></a>
+        </div>
+    </div>
+</div>

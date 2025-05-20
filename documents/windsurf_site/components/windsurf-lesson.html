@@ -1,0 +1,379 @@
+<div class="section-content">
+    <h2>Windsurf Learning Lesson</h2>
+    
+    <div class="intro-text">
+        <p>This comprehensive lesson guides you through the complete workflow of using Windsurf to create and deploy a modern website. You'll learn how to leverage Windsurf's AI capabilities to research, create content, build a website, and deploy it online.</p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3>What You'll Learn</h3>
+        <ul>
+            <li>Effective prompting techniques for working with Windsurf and Cascade</li>
+            <li>How to conduct research using Model Context Protocol (MCP)</li>
+            <li>Transforming research into structured Markdown content</li>
+            <li>Converting Markdown to HTML, CSS, and JavaScript</li>
+            <li>Version control with GitHub</li>
+            <li>Automated deployment with Netlify</li>
+        </ul>
+    </div>
+    
+    <div class="tabbed-content">
+        <div class="tab-buttons">
+            <button class="tab-button active" data-tab="prompting-tab">Effective Prompting</button>
+            <button class="tab-button" data-tab="workflow-tab">Complete Workflow</button>
+            <button class="tab-button" data-tab="prompt-examples-tab">Prompt Examples</button>
+        </div>
+        
+        <div class="tab-content">
+            <div id="prompting-tab" class="tab-pane active">
+                <h3>Effective Prompting in Windsurf</h3>
+                
+                <div class="callout callout-info">
+                    <div class="callout-icon"><i class="fas fa-info-circle"></i></div>
+                    <div>
+                        <div class="callout-title">What Makes Windsurf Different</div>
+                        <p>Windsurf combines an AI coding assistant (Cascade) with powerful context awareness and tools. Unlike traditional AI assistants, Cascade can see your code, run commands, and use external tools through MCP. This requires adapting your prompting strategy for optimal results.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-box-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="feature-box-content">
+                        <h3>Prompting Best Practices</h3>
+                        <p>Follow these guidelines to get the most out of Windsurf:</p>
+                        <ol>
+                            <li><strong>Be specific with your requests</strong> - Tell Cascade exactly what you want to accomplish</li>
+                            <li><strong>One task at a time</strong> - Break complex tasks into smaller, manageable steps</li>
+                            <li><strong>Provide context</strong> - Explain what you're working on and any relevant background</li>
+                            <li><strong>Reference files explicitly</strong> - Mention file paths when working with existing code</li>
+                            <li><strong>Request appropriate tools</strong> - Ask Cascade to use specific MCP servers when needed</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="card-title">Effective Prompts</div>
+                        <ul>
+                            <li>"Research the latest best practices for responsive web design using the firecrawl MCP"</li>
+                            <li>"Create a function that validates email addresses in JavaScript"</li>
+                            <li>"Help me debug the error in src/components/Header.js"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-times-circle"></i></div>
+                        <div class="card-title">Ineffective Prompts</div>
+                        <ul>
+                            <li>"Make my website better" (too vague)</li>
+                            <li>"Create a complete e-commerce platform" (too broad)</li>
+                            <li>"Fix all the bugs" (lacks specific information)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Start with a Clear Goal</div>
+                        <p>Begin your prompt by clearly stating what you want to accomplish. For example:</p>
+                        <div class="code-block" data-language="text">
+I want to create a responsive navigation menu for my website that collapses into a hamburger menu on mobile devices.
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Provide Context and Constraints</div>
+                        <p>Include relevant information about your project and any constraints:</p>
+                        <div class="code-block" data-language="text">
+I'm building a website using HTML, CSS, and vanilla JavaScript (no frameworks). The site needs to be compatible with IE11 and modern browsers.
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Request Specific Research (When Needed)</div>
+                        <p>Specify what you want to research and which tools to use:</p>
+                        <div class="code-block" data-language="text">
+Please use the firecrawl MCP to research current best practices for accessible navigation menus, focusing on WCAG 2.1 compliance.
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Ask for Implementation</div>
+                        <p>Request specific implementation help:</p>
+                        <div class="code-block" data-language="text">
+Based on this research, please help me implement a responsive navigation menu in my index.html, styles.css, and main.js files.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="workflow-tab" class="tab-pane">
+                <h3>Complete Windsurf Workflow</h3>
+                
+                <div class="intro-text">
+                    <p>In this section, we'll walk through the complete workflow we used to create the Windsurf Guide website, from initial research to deployment.</p>
+                </div>
+                
+                <div class="workflow-diagram">
+                    <div class="workflow-step">
+                        <div class="workflow-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="workflow-label">Research with MCP</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-step">
+                        <div class="workflow-icon">
+                            <i class="fab fa-markdown"></i>
+                        </div>
+                        <div class="workflow-label">Markdown Content</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-step">
+                        <div class="workflow-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="workflow-label">HTML/CSS/JS</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-step">
+                        <div class="workflow-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="workflow-label">GitHub</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-step">
+                        <div class="workflow-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="workflow-label">Netlify</div>
+                    </div>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">Step 1: Research with MCP</div>
+                        <p>We began by researching Windsurf, GitHub, and Netlify using the firecrawl MCP:</p>
+                        <div class="code-block" data-language="text">
+Please use the firecrawl MCP to research detailed information about Windsurf installation and setup. Include system requirements, installation process, and initial configuration steps.
+                        </div>
+                        <p>This prompt triggered Cascade to use the firecrawl MCP server to search the web for up-to-date information about Windsurf.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Step 2: Create Structured Markdown Content</div>
+                        <p>Based on the research, we created structured markdown content:</p>
+                        <div class="code-block" data-language="text">
+Based on our research, please create a well-structured markdown file for a comprehensive Windsurf Guide. Include sections for introduction, system requirements, installation process, initial setup, getting started with Cascade, and understanding MCP.
+                        </div>
+                        <p>Cascade generated organized markdown content with proper headings, lists, and code blocks, making it easy to review and edit.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Step 3: Convert to HTML, CSS, and JavaScript</div>
+                        <p>We converted the markdown to a component-based website:</p>
+                        <div class="code-block" data-language="text">
+Please convert the markdown content to a modern website structure with HTML, CSS, and JavaScript. Use a component-based approach where each section is in its own HTML file, loaded dynamically with JavaScript.
+                        </div>
+                        <p>Cascade created a complete website structure with:</p>
+                        <ul>
+                            <li>index.html as the main container</li>
+                            <li>Component HTML files for each section</li>
+                            <li>CSS for styling in a modern-styles.css file</li>
+                            <li>JavaScript for dynamic loading and interactivity</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Step 4: Push to GitHub</div>
+                        <p>We created a GitHub repository and pushed our code:</p>
+                        <div class="code-block" data-language="bash">
+# Initialize a Git repository
+git init
+
+# Add all files to staging
+git add .
+
+# Commit with an initial message
+git commit -m "Initial commit of Windsurf Guide website"
+
+# Add GitHub remote (replace with your repository URL)
+git remote add origin https://github.com/yourusername/windsurf-guide.git
+
+# Push to GitHub
+git push -u origin main
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">Step 5: Deploy to Netlify</div>
+                        <p>Finally, we deployed the site to Netlify by connecting to our GitHub repository and configuring the deployment settings:</p>
+                        <ol>
+                            <li>Created a Netlify account and logged in</li>
+                            <li>Clicked "Add new site" > "Import an existing project"</li>
+                            <li>Connected to our GitHub repository</li>
+                            <li>Configured build settings (none needed for static site)</li>
+                            <li>Deployed the site</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="callout callout-success">
+                    <div class="callout-icon"><i class="fas fa-check-circle"></i></div>
+                    <div>
+                        <div class="callout-title">Key Benefits of This Workflow</div>
+                        <ul>
+                            <li><strong>AI-Powered Research:</strong> Leveraging MCP for comprehensive, up-to-date information</li>
+                            <li><strong>Structured Content:</strong> Markdown provides a clean, organized format for content</li>
+                            <li><strong>Modern Web Development:</strong> Component-based approach for maintainability</li>
+                            <li><strong>Version Control:</strong> GitHub for tracking changes and collaboration</li>
+                            <li><strong>Automated Deployment:</strong> Netlify for continuous deployment from GitHub</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="prompt-examples-tab" class="tab-pane">
+                <h3>Windsurf Prompt Examples by Task</h3>
+                
+                <div class="intro-text">
+                    <p>Below are example prompts for various tasks in the web development workflow with Windsurf. These demonstrate best practices for prompting Cascade to get optimal results.</p>
+                </div>
+                
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Research Prompts <i class="fas fa-chevron-down toggle-icon"></i></h4>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="code-block" data-language="text">
+# Basic research prompt
+Use the firecrawl MCP to research the latest best practices for responsive web design in 2025. Focus on mobile-first approaches, accessibility, and performance optimization.
+
+# Targeted research prompt
+Use the firecrawl MCP to find detailed information about GitHub Pages deployment options. I need to understand the difference between project pages and user pages, custom domain configuration, and build options.
+
+# Comparative research prompt
+Use the firecrawl MCP to compare Netlify, Vercel, and GitHub Pages as hosting options for a static React website. Focus on build times, deployment features, and free tier limitations.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Content Creation Prompts <i class="fas fa-chevron-down toggle-icon"></i></h4>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="code-block" data-language="text">
+# Markdown content creation
+Based on our research about Netlify, please create a structured markdown file that explains the process of deploying a website to Netlify from GitHub. Include sections for account setup, repository connection, build configuration, and custom domain setup.
+
+# Structured guide creation
+Create a comprehensive markdown guide for GitHub with the following sections:
+1. What is GitHub (brief introduction)
+2. Creating an account
+3. Setting up your first repository
+4. Basic Git commands
+5. Collaborative workflow
+6. GitHub Pages deployment
+
+# Technical documentation
+Create markdown documentation for a JavaScript function that handles form validation. The function should validate email, password strength, and form completeness. Include code examples, parameter explanations, and usage examples.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Web Development Prompts <i class="fas fa-chevron-down toggle-icon"></i></h4>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="code-block" data-language="text">
+# HTML structure creation
+Create an HTML structure for a modern website with the following sections: header with navigation, hero section, features section with cards, about section, pricing tables, testimonials, contact form, and footer. Use semantic HTML5 elements.
+
+# CSS styling prompt
+Create a CSS file with modern styling for our website. Use CSS variables for a consistent color scheme, implement responsive design with media queries, and add subtle animations for interactive elements. The design should be clean and professional with a color scheme based on blue (#2963ff) as the primary color.
+
+# JavaScript functionality
+Create a JavaScript file that implements the following functionality for our website:
+1. Smooth scrolling for navigation links
+2. Toggle mobile menu for small screens
+3. Form validation for the contact form
+4. Dark mode toggle with local storage persistence
+5. Lazy loading for images
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Component Development Prompts <i class="fas fa-chevron-down toggle-icon"></i></h4>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="code-block" data-language="text">
+# Header component
+Create a header component in HTML with a logo, navigation menu, and call-to-action button. The navigation should collapse to a hamburger menu on mobile devices. Include the necessary CSS and JavaScript.
+
+# Tabbed interface component
+Create a tabbed interface component that allows users to switch between different content sections. The component should have clickable tabs at the top, and only show the content of the active tab. Include HTML, CSS, and JavaScript for this component.
+
+# Modal dialog component
+Create a modal dialog component that can be triggered by clicking a button. The modal should appear with an animation, overlay the rest of the page, and include a close button. Include HTML, CSS, and JavaScript for this component.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Deployment Prompts <i class="fas fa-chevron-down toggle-icon"></i></h4>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="code-block" data-language="text">
+# GitHub workflow prompt
+Help me push my website code to GitHub. I need to initialize a repository, add all files, create an initial commit, and push to a new repository. My website files are in the current directory.
+
+# Netlify deployment prompt
+Guide me through deploying my website to Netlify from my GitHub repository. I want to connect Netlify to my GitHub repository at username/website-repo, configure it to deploy the main branch, and set up a custom domain.
+
+# Continuous integration prompt
+Help me set up GitHub Actions for continuous integration with my website project. I want to run linting and test scripts whenever code is pushed to the repository, and only allow PRs to be merged if all checks pass.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>Combining Prompts for Complex Workflows</h3>
+                    <p>For complex tasks, you can combine multiple prompts in sequence to guide Windsurf through the full workflow:</p>
+                    <ol>
+                        <li>Start with research: "Use firecrawl MCP to research..."</li>
+                        <li>Follow with content creation: "Based on the research, create a markdown file..."</li>
+                        <li>Request web development: "Convert the markdown to HTML, CSS, and JS..."</li>
+                        <li>Finally, deployment: "Help me push this code to GitHub and deploy to Netlify..."</li>
+                    </ol>
+                    <p>This step-by-step approach keeps tasks manageable and allows you to review and provide feedback at each stage.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="callout callout-info">
+        <div class="callout-icon"><i class="fas fa-info-circle"></i></div>
+        <div>
+            <div class="callout-title">Practical Exercise</div>
+            <p>Try replicating our workflow with your own project:</p>
+            <ol>
+                <li>Use the prompt examples to conduct research on a topic of your choice using Windsurf's MCP</li>
+                <li>Create a structured markdown file based on that research</li>
+                <li>Convert the markdown to a simple HTML/CSS/JS website</li>
+                <li>Push the code to GitHub and deploy to Netlify</li>
+            </ol>
+            <p>This hands-on experience will reinforce your understanding of the complete workflow.</p>
+        </div>
+    </div>
+</div>
