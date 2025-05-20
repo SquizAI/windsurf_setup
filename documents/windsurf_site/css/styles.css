@@ -1,0 +1,326 @@
+/* Global Styles */
+:root {
+    --primary-color: #2963ff;
+    --secondary-color: #5d83fa;
+    --accent-color: #ff7b54;
+    --text-color: #333333;
+    --light-bg: #f8f9fa;
+    --dark-bg: #333333;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Navigation Styles */
+.navigation {
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navigation ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.navigation li {
+    margin: 0;
+}
+
+.navigation a {
+    display: block;
+    padding: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Main Content Styles */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+.section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.section h3 {
+    color: var(--secondary-color);
+    margin: 1.5rem 0 1rem;
+}
+
+.section p {
+    margin-bottom: 1rem;
+}
+
+.section ul,
+.section ol {
+    margin: 1rem 0 1rem 2rem;
+}
+
+.section li {
+    margin-bottom: 0.5rem;
+}
+
+/* Lesson Plan Styles */
+.lesson {
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.lesson h3 {
+    display: flex;
+    align-items: center;
+}
+
+.lesson h3::before {
+    content: '📚';
+    margin-right: 0.5rem;
+}
+
+.lesson-objective {
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.lesson-activities {
+    background-color: var(--light-bg);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+.lesson-outcome {
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Resources Styles */
+.resources-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.resource-card {
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    transition: var(--transition);
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+}
+
+.resource-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .navigation ul {
+        flex-direction: column;
+    }
+    
+    .navigation li {
+        width: 100%;
+    }
+    
+    .resources-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Code Block Styling */
+.code-block {
+    background-color: #f4f4f4;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    margin: 1rem 0;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: auto;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: var(--light-bg);
+}
+
+/* Callout Box Styles */
+.callout {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: var(--border-radius);
+    border-left: 5px solid;
+}
+
+.callout-info {
+    background-color: #e3f2fd;
+    border-left-color: #2196f3;
+}
+
+.callout-warning {
+    background-color: #fff8e1;
+    border-left-color: #ffc107;
+}
+
+.callout-success {
+    background-color: #e8f5e9;
+    border-left-color: #4caf50;
+}
+
+/* Dark Mode Toggle */
+.dark-mode {
+    --text-color: #f8f9fa;
+    --light-bg: #333333;
+    --dark-bg: #222222;
+    background-color: var(--dark-bg);
+}
+
+.dark-mode .section {
+    background-color: var(--light-bg);
+}
+
+.dark-mode .code-block {
+    background-color: #222222;
+    color: #f8f9fa;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    opacity: 0;
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    background-color: var(--secondary-color);
+}

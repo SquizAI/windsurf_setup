@@ -1,0 +1,151 @@
+<h2>Troubleshooting</h2>
+<div class="troubleshooting-content">
+    <p>Encountering issues with Windsurf? Here are solutions for common problems:</p>
+    
+    <div class="issues-accordion">
+        <div class="issue">
+            <div class="issue-header">
+                <h3>Installation Issues</h3>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="issue-content">
+                <ul>
+                    <li>If installation fails, try downloading again or using an alternative method</li>
+                    <li>Ensure your system meets the minimum requirements</li>
+                    <li>Check for system permissions if the application won't install</li>
+                    <li>If you get a "damaged file" error on macOS, try:
+                        <div class="code-block">
+                            xattr -d com.apple.quarantine /Applications/Windsurf.app
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="issue">
+            <div class="issue-header">
+                <h3>Performance Problems</h3>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="issue-content">
+                <ul>
+                    <li>Close unused applications to free up system resources</li>
+                    <li>Restart Windsurf if it becomes sluggish</li>
+                    <li>Check Task Manager/Activity Monitor for resource usage</li>
+                    <li>Disable unused extensions that might be consuming resources</li>
+                    <li>Try reducing the size of the workspace if it's very large</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="issue">
+            <div class="issue-header">
+                <h3>Cascade Not Responding</h3>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="issue-content">
+                <ul>
+                    <li>Verify your internet connection as Cascade requires online connectivity</li>
+                    <li>Try switching to a different AI model</li>
+                    <li>Restart the Cascade panel using the refresh button</li>
+                    <li>Check your Windsurf subscription status and usage limits</li>
+                    <li>Try clearing the Cascade conversation history</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="issue">
+            <div class="issue-header">
+                <h3>Import Issues</h3>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="issue-content">
+                <ul>
+                    <li>If VS Code settings don't import correctly, try importing specific settings manually</li>
+                    <li>Some extensions may not be compatible with Windsurf</li>
+                    <li>Check for any error messages during the import process</li>
+                    <li>Try exporting settings from VS Code again with the latest version</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="issue">
+            <div class="issue-header">
+                <h3>MCP Connection Issues</h3>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="issue-content">
+                <ul>
+                    <li>Verify that MCP is enabled in settings</li>
+                    <li>Check your internet connection</li>
+                    <li>Ensure firewall settings aren't blocking MCP connections</li>
+                    <li>Try restarting Windsurf to reset MCP connections</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="diagnostic-tools">
+        <h3>Diagnostic Tools</h3>
+        <p>Windsurf includes several diagnostic tools to help identify and resolve issues:</p>
+        <div class="tool-cards">
+            <div class="tool-card">
+                <h4>System Information</h4>
+                <p>Access via <code>Help > System Info</code>. Provides detailed information about your system configuration and Windsurf installation.</p>
+            </div>
+            
+            <div class="tool-card">
+                <h4>Developer Tools</h4>
+                <p>Access via <code>Help > Toggle Developer Tools</code>. Provides access to console logs and network activity.</p>
+            </div>
+            
+            <div class="tool-card">
+                <h4>Reset Windsurf Settings</h4>
+                <p>Access via <code>File > Preferences > Reset Settings</code>. Resets Windsurf to default settings if you encounter persistent issues.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="getting-help">
+        <h3>Getting Help</h3>
+        <div class="help-options">
+            <div class="help-option">
+                <h4>Documentation</h4>
+                <p>Visit the <a href="https://docs.windsurf.com" target="_blank">Windsurf documentation</a> for comprehensive guides and troubleshooting.</p>
+            </div>
+            
+            <div class="help-option">
+                <h4>Community Forum</h4>
+                <p>Join the <a href="https://community.windsurf.com" target="_blank">Windsurf community forum</a> for user-to-user support and discussions.</p>
+            </div>
+            
+            <div class="help-option">
+                <h4>Support Ticket</h4>
+                <p>For critical issues, contact <a href="https://support.windsurf.com" target="_blank">Windsurf support</a> with a detailed description of your problem.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script for accordion functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const issueHeaders = document.querySelectorAll('.issue-header');
+        
+        issueHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('.toggle-icon');
+                
+                // Toggle the content display
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.textContent = '+';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.textContent = '-';
+                }
+            });
+        });
+    });
+</script>

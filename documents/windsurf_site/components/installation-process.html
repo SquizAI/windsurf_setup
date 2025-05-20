@@ -1,0 +1,87 @@
+<h2>Installation Process</h2>
+<div class="installation-content">
+    <p>Follow these step-by-step instructions to install Windsurf:</p>
+    
+    <div class="installation-tabs">
+        <div class="tab-buttons">
+            <button class="tab-button active" data-tab="macos">macOS</button>
+            <button class="tab-button" data-tab="windows">Windows</button>
+            <button class="tab-button" data-tab="linux">Linux</button>
+        </div>
+        
+        <div class="tab-content">
+            <div class="tab-pane active" id="macos">
+                <ol>
+                    <li>Visit the official Windsurf website at <a href="https://windsurf.com/download" target="_blank">windsurf.com/download</a></li>
+                    <li>Click the "Download for macOS" button</li>
+                    <li>Once the download is complete, open the downloaded <code>.dmg</code> file</li>
+                    <li>Drag the Windsurf application to your Applications folder</li>
+                    <li>Open Windsurf from your Applications folder</li>
+                    <li>If you see a security warning, go to System Preferences > Security & Privacy and click "Open Anyway"</li>
+                </ol>
+                <div class="installation-screenshot">
+                    <img src="https://via.placeholder.com/800x450?text=macOS+Installation" alt="macOS Installation" class="screenshot">
+                </div>
+            </div>
+            
+            <div class="tab-pane" id="windows">
+                <ol>
+                    <li>Visit the official Windsurf website at <a href="https://windsurf.com/download" target="_blank">windsurf.com/download</a></li>
+                    <li>Click the "Download for Windows" button</li>
+                    <li>Once the download is complete, run the installer (<code>.exe</code> file)</li>
+                    <li>Follow the installation wizard instructions</li>
+                    <li>Launch Windsurf from the Start menu or desktop shortcut after installation</li>
+                </ol>
+                <div class="installation-screenshot">
+                    <img src="https://via.placeholder.com/800x450?text=Windows+Installation" alt="Windows Installation" class="screenshot">
+                </div>
+            </div>
+            
+            <div class="tab-pane" id="linux">
+                <ol>
+                    <li>Visit the official Windsurf website at <a href="https://windsurf.com/download" target="_blank">windsurf.com/download</a></li>
+                    <li>Click the "Download for Linux" button</li>
+                    <li>Choose the appropriate package for your distribution (<code>.deb</code> for Ubuntu/Debian, <code>.rpm</code> for Red Hat/Fedora)</li>
+                    <li>Install the package using your distribution's package manager:
+                        <div class="code-block">
+                            <p># For Ubuntu/Debian:</p>
+                            <p>sudo dpkg -i windsurf_*.deb && sudo apt-get install -f</p>
+                            <p># For Red Hat/Fedora:</p>
+                            <p>sudo rpm -i windsurf_*.rpm</p>
+                        </div>
+                    </li>
+                    <li>Launch Windsurf from your applications menu</li>
+                </ol>
+                <div class="installation-screenshot">
+                    <img src="https://via.placeholder.com/800x450?text=Linux+Installation" alt="Linux Installation" class="screenshot">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="callout callout-success">
+        <p><strong>Pro Tip:</strong> After installation, you might want to add Windsurf to your dock or taskbar for quick access.</p>
+    </div>
+</div>
+
+<!-- Tab switching script for this component -->
+<script>
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons and panes
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Show corresponding tab pane
+            const tabId = button.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+</script>
